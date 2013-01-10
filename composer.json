@@ -18,5 +18,8 @@
         "symfony/framework-bundle": ">=2.1,<2.2-dev"
     },
     "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "antwebes\\BadgeBundle": "" }
+    },
     "target-dir": "antwebes/BadgeBundle"
 }
