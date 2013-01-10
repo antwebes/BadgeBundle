@@ -20,8 +20,5 @@ interface BadgeInterface
 	public function getImage();
 	
 	public function setImage($image);
-	
-	public function getHasLevels();
-	
-	public function setHasLevels($hasLevels);
+
 }
