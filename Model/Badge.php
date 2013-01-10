@@ -7,7 +7,6 @@ abstract class Badge implements BadgeInterface {
 	protected $name;
 	protected $description;
 	protected $image;
-	protected $hasLevels;
 
 	public function __construct($name) {
 		$this->name = $name;
@@ -45,12 +44,5 @@ abstract class Badge implements BadgeInterface {
 		$this->image = $image;
 	}
 
-	public function getHasLevels() {
-		return $this->hasLevels;
-	}
-
-	public function setHasLevels($hasLevels) {
-		$this->hasLevels = $hasLevels;
-	}
 
 }
