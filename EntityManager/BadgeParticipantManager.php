@@ -52,8 +52,6 @@ class BadgeParticipantManager extends BaseBadgeParticipantManager
     /**
 * Creamos todas las funciones que queramos como el FOsMessageBundle
 */
-    etSingleScalarResult();
-    }
 
     protected function createMessageMetadata()
     {
