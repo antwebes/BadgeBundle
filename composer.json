@@ -1,5 +1,5 @@
 {
-    "name": "antwebes/BadgeBundle",
+    "name": "antwebes/badge-bundle",
     "type": "symfony-bundle",
     "description": "Badge Bundle for symfony2",
     "keywords": ["badge"],
