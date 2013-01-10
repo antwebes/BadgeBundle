@@ -10,15 +10,11 @@
 namespace antwebes\BadgeBundle;
 
 
-interface BadgeGroupInterface
+interface BadgeParticipantInterface
 {
-	public function getId();
+	public function getWins();
 	
-	public function setId($id);
+	public function setWins($wins);
 	
-	public function getName();
-	
-	public function setName($name);
-
 
 }

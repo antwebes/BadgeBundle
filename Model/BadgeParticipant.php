@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * This file is part of the AntewesBadgeBundle package.
  *
@@ -9,16 +9,16 @@
  */
 namespace antwebes\BadgeBundle;
 
+abstract class BadgeParticipant implements BadgeParticipantInterface {
+	
+	protected $wins;
 
-interface BadgeGroupInterface
-{
-	public function getId();
+	public function getWins() {
+		return $this->wins;
+	}
 	
-	public function setId($id);
-	
-	public function getName();
-	
-	public function setName($name);
-
+	public function setWins($wins) {
+		$this->wins = $wins;
+	}
 
 }
