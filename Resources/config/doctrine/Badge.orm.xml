@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+This file is part of the BadgeBundle package.
+
+(c) Antwebes <http://github.com/antwebes/>
+
+This source file is subject to the MIT license that is bundled
+with this source code in the file LICENSE.
+-->
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="ant\BadgeBundle\Entity\Badge">
+
+        <field name="body" column="body" type="text" />
+
+        <field name="ancestors" column="ancestors" type="string" length="1024" nullable="false" />
+
+        <field name="depth" column="depth" type="integer" />
+
+        <field name="createdAt" column="created_at" type="datetime" />
+
+        <field name="state" column="state" type="integer" />
+
+    </mapped-superclass>
+
+</doctrine-mapping>
