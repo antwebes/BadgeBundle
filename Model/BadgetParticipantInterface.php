@@ -12,9 +12,9 @@ namespace ant\BadgeBundle;
 
 interface BadgeParticipantInterface
 {
-	public function getWins();
+	public function getCount();
 	
-	public function setWins($wins);
+	public function setCount($count);
 	
 
 }

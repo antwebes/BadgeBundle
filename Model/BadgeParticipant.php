@@ -11,14 +11,14 @@ namespace ant\BadgeBundle;
 
 abstract class BadgeParticipant implements BadgeParticipantInterface {
 	
-	protected $wins;
+	protected $count;
 
-	public function getWins() {
-		return $this->wins;
+	public function getcount() {
+		return $this->count;
 	}
 	
-	public function setWins($wins) {
-		$this->wins = $wins;
+	public function setcount($count) {
+		$this->count = $count;
 	}
 
 }
