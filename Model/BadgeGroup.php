@@ -8,7 +8,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace antwebes\BadgeBundle;
+namespace ant\BadgeBundle;
 
 abstract class BadgeGroup implements BadgeGroupInterface {
 	protected $id;

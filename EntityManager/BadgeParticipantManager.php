@@ -1,10 +1,11 @@
 <?php
 
-namespace antwebes\BadgeBundle\EntityManager;
+namespace ant\BadgeBundle\EntityManager;
 
-use antwebes\BadgeBundle\ModelManager\BadgeParticipantManager as BaseBadgeParticipantManager;
+use ant\BadgeBundle\ModelManager\BadgeParticipantManager as BaseBadgeParticipantManager;
+
 use Doctrine\ORM\EntityManager;
-use antwebes\BadgeBundle\Model\BadgeInterface;
+use ant\BadgeBundle\Model\BadgeInterface;
 use Doctrine\ORM\Query\Builder;
 
 /**

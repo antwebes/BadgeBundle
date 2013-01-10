@@ -1,6 +1,6 @@
 <?php
 
-namespace antwebes\BadgeBundle;
+namespace ant\BadgeBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

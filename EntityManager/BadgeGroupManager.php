@@ -1,8 +1,9 @@
 <?php
 
-namespace antwebes\BadgeBundle\EntityManager;
+namespace ant\BadgeBundle\EntityManager;
 
-use antwebes\BadgeBundle\ModelManager\BadgeGroupManager as BaseBadgeGroupManager;
+use ant\BadgeBundle\ModelManager\BadgeGroupManager as BaseBadgeGroupManager;
+
 use Doctrine\ORM\EntityManager;
 use antwebes\BadgeBundle\Model\BadgeInterface;
 use Doctrine\ORM\Query\Builder;

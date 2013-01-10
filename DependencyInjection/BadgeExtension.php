@@ -1,6 +1,6 @@
 <?php
 
-namespace antwebes\BadgeBundle\DependencyInjection;
+namespace ant\BadgeBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

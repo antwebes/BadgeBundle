@@ -1,6 +1,6 @@
 <?php
 
-namespace antwebes\BadgeBundle\Controller;
+namespace ant\BadgeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

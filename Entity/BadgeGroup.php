@@ -9,9 +9,9 @@
 * with this source code in the file LICENSE.
 */
 
-namespace antwebes\BadgeBundle\Entity;
+namespace ant\BadgeBundle\Entity;
 
-use antwebes\BadgeBundle\Model\BadgeGroup as AbstractBadgeGroup;
+use ant\BadgeBundle\Model\BadgeGroup as AbstractBadgeGroup;
 
 /**
 * Default ORM implementation of BadgetInterface.
