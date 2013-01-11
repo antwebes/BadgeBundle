@@ -17,8 +17,8 @@ class BadgeManager implements BadgeManagerInterface
     protected function createBadge()
     {
     	$class = $this->getClass();
-    	$message = new $class;
+    	$badge = new $class;
     	
-    	return $message;
+    	return $badge;
     }
 }

@@ -33,7 +33,7 @@ class Provider implements ProviderInterface
 	 */
 	public function getBadge($badgeId){
 		
-		$badge = $this->badgeManager->findBadgeById($threadId);
+		$badge = $this->badgeManager->findBadgeById($badgeId);
 		return $badge;
 	}
 }
