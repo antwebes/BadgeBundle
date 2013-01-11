@@ -3,7 +3,7 @@ badge_homepage:
     defaults: { _controller: BadgeBundle:Default:index }
 
 ant_badge_view:
-    pattern: /{badgeId}
+    pattern: /badge/{badgeId}
     defaults: { _controller: BadgeBundle:Badge:badge }
 ant_badge_new:
     pattern: /badge-new

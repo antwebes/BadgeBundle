@@ -25,25 +25,5 @@ abstract class AbstractBadgeBuilder
         $this->badge = $badge;
     }
 
-    /**
-     * Gets the created message.
-     *
-     * @return MessageInterface the message created
-     */
-    public function getMessage()
-    {
-        return $this->message;
-    }
-
-    /**
-     * @param  string
-     * @return MessageBuilder (fluent interface)
-     */
-    public function setBody($body)
-    {
-        $this->message->setBody($body);
-
-        return $this;
-    }
 
 }

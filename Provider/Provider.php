@@ -2,7 +2,6 @@
 
 namespace ant\BadgeBundle\Provider;
 
-use ant\BadgeBundle\Badge;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use ant\BadgeBundle\ModelManager\BadgeManagerInterface;
