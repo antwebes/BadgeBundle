@@ -11,16 +11,16 @@
 
     <services>
 
-		 <service id="ant_badge.new_badge_form.type.default" class="ant\BadgeBundle\FormType\NewBadgeFormType" public="false" />
+		 <service id="ant_badge.new_badge_form.type" class="ant\BadgeBundle\FormType\NewBadgeFormType" public="true" />
 		 
-        <service id="ant_badge.new_badge_form.factory.default" class="ant\BadgeBundle\FormFactory\NewBadgeFormFactory" public="false">
+        <service id="ant_badge.new_badge_form.factory" class="ant\BadgeBundle\FormFactory\NewBadgeFormFactory" public="true">
             <argument type="service" id="form.factory" />
             <argument type="service" id="ant_badge.new_badge_form.type" />
             <argument>%ant_badge.new_badge_form.name%</argument>
             <argument>%ant_badge.new_badge_form.model%</argument>
           
         </service>
-        <service id="ant_badge.new_badge_form.handler.default" class="ant\BadgeBundle\FormHandler\NewBadgeFormHandler" scope="request" public="false">
+        <service id="ant_badge.new_badge_form.handler" class="ant\BadgeBundle\FormHandler\NewBadgeFormHandler" scope="request" public="true">
             <argument type="service" id="request" />
         </service>
 

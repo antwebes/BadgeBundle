@@ -39,14 +39,15 @@ abstract class AbstractBadgeFormFactory
      *
      * @var string
      */
-    protected $messageClass;
+    protected $badgeClass;
 
-    public function __construct(FormFactoryInterface $formFactory, AbstractType $formType, $formName, $messageClass)
+    public function __construct(FormFactoryInterface $formFactory, AbstractType $formType, $formName, $badgeClass)
     {
         $this->formFactory = $formFactory;
         $this->formType = $formType;
         $this->formName = $formName;
-        $this->messageClass = $messageClass;
+       // $this->badgeClass = $badgeClass;
+        $this->badgeClass = 'ant\BadgeBundle\FormModel\NewBadge';
     }
 
     /**
@@ -56,7 +57,7 @@ abstract class AbstractBadgeFormFactory
      */
     protected function createModelInstance()
     {
-        $class = $this->messageClass;
+        $class = $this->badgeClass;
 
         return new $class();
     }

@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
  	<services>
-		<service id="ant_badge.provider.default" class="ant\BadgeBundle\Provider\Provider" public="false">
+		<service id="ant_badge.provider" class="ant\BadgeBundle\Provider\Provider" public="true">
             <argument type="service" id="ant_badge.badge_manager" />
         </service>
     </services>

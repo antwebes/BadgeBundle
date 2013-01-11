@@ -10,7 +10,7 @@
     </parameters>
     
     <services>
-        <service id="ant_badge.badge_manager.default" class="ant\BadgeBundle\EntityManager\BadgeManager" public="false">
+        <service id="ant_badge.badge_manager" class="ant\BadgeBundle\EntityManager\BadgeManager" public="true">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument>%ant_badge.badge.class%</argument>
         </service>
