@@ -10,8 +10,14 @@
 
 namespace ant\BadgeBundle\ModelManager;
 
-class BadgeGroupManagerInterface 
+class BadgeManagerInterface 
 {
+	/**
+	 * Finds a badge by its ID
+	 *
+	 * @return BadgeInterface or null
+	 */
+	function findBadgeById($id);
 
 	public function createBadgeGroup();
 }

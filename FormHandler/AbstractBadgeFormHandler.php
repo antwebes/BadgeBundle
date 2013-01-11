@@ -18,16 +18,10 @@ use FOS\MessageBundle\Sender\SenderInterface;
 abstract class AbstractBadgeFormHandler
 {
     protected $request;
-    protected $composer;
-    protected $sender;
-    protected $participantProvider;
 
-    public function __construct(Request $request, ComposerInterface $composer, SenderInterface $sender, ParticipantProviderInterface $participantProvider)
+    public function __construct(Request $request)
     {
         $this->request = $request;
-        $this->composer = $composer;
-        $this->sender = $sender;
-        $this->participantProvider = $participantProvider;
     }
 
     /**

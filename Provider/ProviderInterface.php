@@ -8,4 +8,10 @@ namespace ant\BadgeBundle\Provider;
  */
 interface ProviderInterface
 {
+	/**
+	 * Gets the thread 
+	 *
+	 * @return badge
+	 */
+	public function getBadge($badgeId);
 }

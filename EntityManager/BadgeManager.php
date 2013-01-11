@@ -38,32 +38,22 @@ class BadgeManager extends BaseBadgeManager
 	*/
     protected $class;
 
-    /**
-	* @var string
-	*/
-    protected $metaClass;
 
     /**
 	* Constructor.
 	*
 	* @param EntityManager $em
 	* @param string $class
-	* @param string $metaClass
 	*/
-    public function __construct(EntityManager $em, $class, $metaClass)
+    public function __construct(EntityManager $em, $class)
     {
         $this->em = $em;
         $this->repository = $em->getRepository($class);
         $this->class = $em->getClassMetadata($class)->name;
-        $this->metaClass = $em->getClassMetadata($metaClass)->name;
     }
 
     /**
-* Creamos todas las funciones que queramos como el FOsMessageBundle
-*/
+	* Creamos todas las funciones que queramos como el FOsMessageBundle
+	*/
 
-    protected function createMessageMetadata()
-    {
-        return new $this->metaClass();
-    }
 }
