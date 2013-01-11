@@ -18,8 +18,8 @@ class BadgeParticipantManager implements BadgeParticipantManagerInterface
     protected function createBadgeParticipant()
     {
     	$class = $this->getClass();
-    	$message = new $class;
+    	$badge = new $class;
     	
-    	return $message;
+    	return $badge;
     }
 }

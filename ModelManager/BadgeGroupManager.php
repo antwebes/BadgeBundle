@@ -18,8 +18,8 @@ class BadgeGroupManager implements BadgeGroupManagerInterface
     public function createBadgeGroup()
     {
         $class = $this->getClass();
-        $message = new $class;
+        $badge = new $class;
 
-        return $message;
+        return $badge;
     }
 }
