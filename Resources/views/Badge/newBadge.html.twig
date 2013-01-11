@@ -1,0 +1,13 @@
+{% extends 'BadgeBundle::layout.html.twig' %}
+
+{% block ant_badge_content %}
+
+<h2>{% trans from 'BadgeBundle' %}create_new{% endtrans %}</h2>
+
+<form action="{{ url('ant_badge_new') }}" method="post">
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+
+{% endblock %}

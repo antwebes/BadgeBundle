@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="ant_badge.new_badge_form.factory.default" class="ant\BadgeBundle\FormFactory\NewBadgeFormFactory" public="false">
+            <argument type="service" id="form.factory" />
+            <argument type="service" id="fos_message.new_thread_form.type" />
+            <argument>%badge.new_badge_form.name%</argument>
+            <argument>%badge.new_badge_form.model%</argument>
+        </service>
+        <service id="ant_badge.new_badge_form.handler.default" class="ant\BadgeBundle\FormHandler\NewBadgeFormHandler" scope="request" public="false">
+            <argument type="service" id="request" />
+            <argument type="service" id="fos_message.composer" />
+            <argument type="service" id="fos_message.sender" />
+            <argument type="service" id="fos_message.participant_provider" />
+        </service>
+
+    </services>
+
+</container>

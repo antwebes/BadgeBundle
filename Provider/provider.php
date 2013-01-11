@@ -11,4 +11,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
  */
 class Provider implements ProviderInterface
 {
+	public function getBadgetUser($userId){
+		
+	}
 }
