@@ -11,7 +11,7 @@
 namespace ant\BadgeBundle\ModelManager;
 
 
-class BadgeManager implements badge
+class BadgeManager implements BadgeManagerInterface
 {
 
     protected function createBadge()

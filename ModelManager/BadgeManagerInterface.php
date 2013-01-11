@@ -10,7 +10,7 @@
 
 namespace ant\BadgeBundle\ModelManager;
 
-class BadgeManagerInterface 
+interface BadgeManagerInterface 
 {
 	/**
 	 * Finds a badge by its ID

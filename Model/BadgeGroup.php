@@ -8,7 +8,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace ant\BadgeBundle;
+namespace ant\BadgeBundle\Model;
 
 abstract class BadgeGroup implements BadgeGroupInterface {
 	protected $id;
