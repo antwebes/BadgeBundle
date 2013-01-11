@@ -26,13 +26,14 @@ class BadgeExtension extends Extension
         $config = $processor->processConfiguration($configuration, $configs);
 
         //$loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        //$loader->load('services.yml');
+       // $loader->load('services.yml');
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         
         $loader->load('config.xml');
         $loader->load('form.xml');
         $loader->load('orm.xml');
         
-        $container->setParameter('badge.new_badge_form.name', $config['new_badge_form']['name']);
+        
+       // $container->setParameter('badge.new_badge_form.name', $config['name']);
     }
 }
