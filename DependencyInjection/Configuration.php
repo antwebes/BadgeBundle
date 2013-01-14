@@ -18,11 +18,20 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('badge');
+        $rootNode = $treeBuilder->root('ant_badge');
 
         $rootNode
         	->children()
-        		->scalarNode('class')->isRequired()->cannotBeEmpty()->end()
+        		->scalarNode('db_driver')->cannotBeOverwritten()->isRequired()->cannotBeEmpty()->end()
+        		->scalarNode('badge_class')->isRequired()->cannotBeEmpty()->end()
+
+        		->arrayNode('new_badge_form')
+	        		->addDefaultsIfNotSet()
+	        		->children()
+	        			->scalarNode('name')->defaultValue('badge')->cannotBeEmpty()->end()
+		        		->scalarNode('model')->defaultValue('ant\BadgeBundle\FormModel\NewBadge')->end()
+	        		->end()
+        		->end()
         		;
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

@@ -12,7 +12,7 @@
     <services>
         <service id="ant_badge.badge_manager" class="ant\BadgeBundle\EntityManager\BadgeManager" public="true">
             <argument type="service" id="doctrine.orm.entity_manager" />
-            <argument>%ant_badge.badge.class%</argument>
+            <argument>%ant_badge.badge_class%</argument>
         </service>
 
     </services>
