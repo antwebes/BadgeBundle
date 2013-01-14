@@ -20,7 +20,7 @@ use ant\BadgeBundle\Model\BadgeParticipant as AbstractBadgeParticipant;
 *
 * @author Pablo  <pablo@antweb.es>
 */
-abstract class BadgeParticipant extends AbstractBadge
+abstract class BadgeParticipant extends AbstractBadgeParticipant
 {
  
 	

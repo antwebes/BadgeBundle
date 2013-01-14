@@ -10,6 +10,8 @@
 
 namespace ant\BadgeBundle\ModelManager;
 
+use ant\BadgeBundle\Model\BadgeInterface;
+
 interface BadgeManagerInterface 
 {
 	/**
@@ -24,6 +26,6 @@ interface BadgeManagerInterface
      *
      * @param BadgeInterface $badge
      */
-	protected function doSaveMessage(BadgeInterface $badge);
+    function saveBadge(BadgeInterface $badge);
 
 }

@@ -61,7 +61,7 @@ class BadgeManager extends BaseBadgeManager
      *
      * @param BadgeInterface $badge
      */
-    protected function doSaveMessage(BadgeInterface $badge)
+    public function saveBadge(BadgeInterface $badge)
     {
     	$this->em->persist($message);
     	$this->em->flush();
