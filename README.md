@@ -1,82 +1,25 @@
-BadgeBundle
-===========
-
-This bundle provides a management of badges for user, support for Symfony2.
+Documentation: https://github.com/antwebes/BadgeBundle/blob/master/Resources/doc/index.rst
 
 
-## Installation
+---
 
-Installation is a quick 3 step process:
+This bundle provides a management of badges for user, support for Symfony2 application.
 
-1. Download BadgeBundle using composer
-2. Enable the Bundle
-3. Configure your application's config.yml
+BadgeBundle is created to management of badges for user at site web.
 
-### Step 1: Download BadgeBundle using composer
+A badge is an object that the user gets when it meets minimum requirements.
 
-Add BadgeBundle in your composer.json:
+The persistence is storage agnostic. Any backend may be implemented: Doctrine, Propel, etc.
+Presently, only the OMR implementation is complete.
 
-```js
-{
-    "require": {
-        "antwebes/badge-bundle" : "dev-master"
-    }
-}
-```
+This bundle is currently under development, will be at 100% soon.
 
-Now tell composer to download the bundle by running the command:
+---
 
-``` bash
-$ php composer.phar update antwebes/badge-bundle
-```
+For documentation, see:
 
-Composer will install the bundle to your project's `vendor/antwebes/badge-bundle` directory.
+    Resources/doc/index.rst
 
-### Step 2: Enable the bundle
+License:
 
-Enable the bundle in the kernel:
-
-``` php
-<?php
-// app/AppKernel.php
-
-public function registerBundles()
-{
-    $bundles = array(
-        // ...
-        new ant\BadgeBundle\AntBadgeBundle()
-    );
-}
-```
-### Step3: Configuration 
-
-Register the bundle's routes
-
-Finally, add the following to your routing file:
-
-``` yaml
-ant_badge:
-    db_driver: orm
-    badge_class: Yourproject\YourBundle\Entity\Badge
-``` 
-
-``` yaml
-
-# app/config/routing.yml
-badge_bundle:
-    resource: "@AntBadgeBundle/Resources/config/routing.yml"
-    prefix:   /badge
-```
-
-
-Creating concrete model classes
--------------------------------
-
-- For MongoDB_
-- For Doctrine_ORM_
-
-.. _MongoDB: concrete_mongo.rst
-.. _Doctrine_ORM: concrete_orm.rst
-
-
-Congratulations! You're ready to use badges in your site!
+    Resources/meta/LICENSE
