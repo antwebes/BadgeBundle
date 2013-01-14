@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class BadgeExtension extends Extension
+class AntBadgeExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -33,6 +33,6 @@ class BadgeExtension extends Extension
         $loader->load('form.xml');
         $loader->load('orm.xml');
                 
-       $container->setParameter('ant_badge.badge.class', $config['class']);
+        $container->setParameter('ant_badge.badge_class', $config['badge_class']);
     }
 }
