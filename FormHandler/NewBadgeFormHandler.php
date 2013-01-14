@@ -22,7 +22,7 @@ class NewBadgeFormHandler extends AbstractBadgeFormHandler
 
         return $this->composer->newBadge()
             ->setDescription($badge->getDescription())
-            ->addName($badge->getName())
+            ->setName($badge->getName())
             ->setImage($badge->getImage())
             ->getBadge();
     }

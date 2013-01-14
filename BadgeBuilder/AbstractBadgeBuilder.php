@@ -4,7 +4,6 @@ namespace ant\BadgeBundle\BadgeBuilder;
 
 use ant\BadgeBundle\Model\BadgeInterface;
 use ant\BadgeBundle\Model\BadgeParticipantInterface;
-use ant\BadgeBundle\Model\BadgeInterface;
 
 /**
  * Fluent interface badge builder
@@ -25,5 +24,44 @@ abstract class AbstractBadgeBuilder
         $this->badge = $badge;
     }
 
+    /**
+     * Gets the created badge.
+     *
+     * @return BadgeInterface the badge created
+     */
+    public function getBadge()
+    {
+    	return $this->badge;
+    }
+    /**
+     * @param BadgeInterface
+     * @return BadgeBuilder (fluent interface)
+     */
+    public function setDescription($description)
+    {
+    	$this->badge->setDescription($description);
+    
+    	return $this;
+    }
+    /**
+     * @param BadgeInterface
+     * @return BadgeBuilder (fluent interface)
+     */
+    public function setName($name)
+    {
+    	$this->badge->setName($name);
+    
+    	return $this;
+    }
+    /**
+     * @param BadgeInterface
+     * @return BadgeBuilder (fluent interface)
+     */
+    public function setImage($image)
+    {
+    	$this->badge->setImage($image);
+    
+    	return $this;
+    }
 
 }

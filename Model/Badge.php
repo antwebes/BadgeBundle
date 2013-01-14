@@ -10,15 +10,23 @@
 
 namespace ant\BadgeBundle\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
+/**
+ * Abstract badge model
+ *
+ * @author Pablo <pablo@ntweb.es>
+ */
 abstract class Badge implements BadgeInterface {
 	protected $id;
 	protected $name;
 	protected $description;
 	protected $image;
 
-	public function __construct($name) {
+/*	public function __construct($name) {
 		$this->name = $name;
-	}
+	}*/
 
 	public function getId() {
 		return $this->id;

@@ -22,6 +22,7 @@
         </service>
         <service id="ant_badge.new_badge_form.handler" class="ant\BadgeBundle\FormHandler\NewBadgeFormHandler" scope="request" public="true">
             <argument type="service" id="request" />
+            <argument type="service" id="ant_badge.composer" />
         </service>
 
     </services>

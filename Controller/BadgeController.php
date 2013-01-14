@@ -21,9 +21,10 @@ class BadgeController extends ContainerAware
 		$formHandler = $this->container->get('ant_badge.new_badge_form.handler');
 	
 		if ($badge = $formHandler->process($form)) {
-			//return new RedirectResponse($this->container->get('router')->generate('ant_badge_view', array(
-				//	'badgeId' => $badge->getId()
-			//)));
+			//$badge->saveBadge($badge);
+			return new RedirectResponse($this->container->get('router')->generate('ant_badge_view', array(
+					'badgeId' => $badge->getId()
+			)));
 			return new RedirectResponse($this->container->get('router')->generate('badge_homepage'));
 			
 		}	

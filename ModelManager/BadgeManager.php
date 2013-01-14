@@ -13,7 +13,7 @@ use ant\BadgeBundle\Model\BadgeInterface;
 
 class BadgeManager implements BadgeManagerInterface {
 
-	protected function createBadge() {
+	public function createBadge() {
 		$class = $this->getClass();
 		$badge = new $class;
 
