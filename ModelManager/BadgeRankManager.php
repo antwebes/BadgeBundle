@@ -10,8 +10,16 @@
 
 namespace ant\BadgeBundle\ModelManager;
 
-interface BadgeParticipantManagerInterface
-{
 
-	public function createBadgeParticipant();
+
+class BadgeRankManager implements BadgeRankManagerInterface
+{
+  
+    protected function createBadgeParticipant()
+    {
+    	$class = $this->getClass();
+    	$badge = new $class;
+    	
+    	return $badge;
+    }
 }

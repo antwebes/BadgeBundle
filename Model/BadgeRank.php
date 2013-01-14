@@ -9,7 +9,7 @@
  */
 namespace ant\BadgeBundle\Model;
 
-abstract class BadgeParticipant implements BadgeParticipantInterface {
+abstract class BadgeRank implements BadgeRankInterface {
 	
 	protected $count;
 

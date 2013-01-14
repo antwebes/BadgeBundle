@@ -11,7 +11,7 @@
 
 namespace ant\BadgeBundle\Entity;
 
-use ant\BadgeBundle\Model\BadgeGroup as AbstractBadgeGroup;
+use ant\BadgeBundle\Model\BadgeRank as AbstractBadgeRank;
 
 /**
 * Default ORM implementation of BadgetInterface.
@@ -20,7 +20,7 @@ use ant\BadgeBundle\Model\BadgeGroup as AbstractBadgeGroup;
 *
 * @author Pablo  <pablo@antweb.es>
 */
-abstract class BadgeGroup extends AbstractBadgeGroup
+abstract class BadgeRank extends AbstractBadgeRank
 {
  
 	
