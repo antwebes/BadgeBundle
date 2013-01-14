@@ -3,14 +3,14 @@ Concrete classes for Doctrine ORM
 
 The ORM implementation does not provide concrete models. You must create Badge class in your application::
 
-Message class
+Badge class
 -------------
 
 ::
 
-	// src/Acme/MessageBundle/Entity/Badge.php
+	// src/Acme/BadgeBundle/Entity/Badge.php
 	
-	namespace Acme\MessageBundle\Entity;
+	namespace Acme\BadgeBundle\Entity;
 	
 	use Doctrine\ORM\Mapping as ORM;
 	
