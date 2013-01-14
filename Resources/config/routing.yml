@@ -7,4 +7,4 @@ ant_badge_view:
     defaults: { _controller: BadgeBundle:Badge:badge }
 ant_badge_new:
     pattern: /badge-new
-    defaults: { _controller: BadgeBundle:Badge:newBadge }
+    defaults: { _controller: AntBadgeBundle:Badge:newBadge }

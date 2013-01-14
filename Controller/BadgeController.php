@@ -27,7 +27,7 @@ class BadgeController extends ContainerAware
 			return new RedirectResponse($this->container->get('router')->generate('badge_homepage'));
 			
 		}	
-		return $this->container->get('templating')->renderResponse('BadgeBundle:Badge:newBadge.html.twig', array(
+		return $this->container->get('templating')->renderResponse('AntBadgeBundle:Badge:newBadge.html.twig', array(
 				'form' => $form->createView(),
 				'data' => $form->getData()
 		));

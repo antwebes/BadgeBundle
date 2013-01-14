@@ -6,7 +6,7 @@
 
 
 	<parameters>
-        <parameter key="ant_badge.badge.class" />
+        <parameter key="ant_badge.badge_class" />
     </parameters>
     
     <services>

@@ -32,7 +32,11 @@ class AntBadgeExtension extends Extension
         $loader->load('config.xml');
         $loader->load('form.xml');
         $loader->load('orm.xml');
-                
+
+
         $container->setParameter('ant_badge.badge_class', $config['badge_class']);
+        
+        $container->setParameter('ant_badge.new_badge_form.model', $config['new_badge_form']['model']);
+        $container->setParameter('ant_badge.new_badge_form.name', $config['new_badge_form']['name']);
     }
 }
