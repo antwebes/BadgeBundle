@@ -7,7 +7,6 @@ use Symfony\Component\HttpFoundation\Request;
 use ant\BadgeBundle\Composer\ComposerInterface;
 use ant\BadgeBundle\FormModel\AbstractBadge;
 use FOS\MessageBundle\Security\ParticipantProviderInterface;
-use ant\BadgeBundle\Model\BadgeParticipantInterface;
 use FOS\MessageBundle\Sender\SenderInterface;
 
 /**
@@ -56,9 +55,7 @@ abstract class AbstractBadgeFormHandler
     public function processValidForm(Form $form)
     {
     	$badge = $this->composeBadge($form->getData()); // $badge is a NewBadgeBuilder
-    
-    	$this->composer->flush($badge);
-    
+        
     	return $badge;
     }
     

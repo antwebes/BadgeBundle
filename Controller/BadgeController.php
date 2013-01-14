@@ -21,6 +21,7 @@ class BadgeController extends ContainerAware
 		$formHandler = $this->container->get('ant_badge.new_badge_form.handler');
 	
 		if ($badge = $formHandler->process($form)) {
+			$this->container->get('ant_badge.badge_manager')->saveBadge($badge);
 			//$badge->saveBadge($badge);
 			return new RedirectResponse($this->container->get('router')->generate('ant_badge_view', array(
 					'badgeId' => $badge->getId()
@@ -43,7 +44,7 @@ class BadgeController extends ContainerAware
 	{
 		$badge = $this->getProvider()->getBadge($badgeId);
 	
-		return $this->container->get('templating')->renderResponse('BadgeBundle:Badge:badge.html.twig', array(
+		return $this->container->get('templating')->renderResponse('AntBadgeBundle:Badge:badge.html.twig', array(
 				'badge' => $badge
 		));
 	}

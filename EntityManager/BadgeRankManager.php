@@ -10,14 +10,14 @@
 
 namespace ant\BadgeBundle\EntityManager;
 
-use ant\BadgeBundle\ModelManager\BadgeParticipantManager as BaseBadgeRankManager;
+use ant\BadgeBundle\ModelManager\BadgeRankManager as BaseBadgeRankManager;
 
 use Doctrine\ORM\EntityManager;
 use ant\BadgeBundle\Model\BadgeInterface;
 use Doctrine\ORM\Query\Builder;
 
 /**
-* Default ORM BadgeParticipantManager.
+* Default ORM BadgeRankManager.
 *
 * @author Pablo <pablo@antweb.es>
 */

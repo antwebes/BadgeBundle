@@ -9,19 +9,16 @@
  */
 
 namespace ant\BadgeBundle\ModelManager;
+
 use ant\BadgeBundle\Model\BadgeInterface;
 
-class BadgeManager implements BadgeManagerInterface {
+abstract class BadgeManager implements BadgeManagerInterface {
 
 	public function createBadge() {
 		$class = $this->getClass();
 		$badge = new $class;
 
 		return $badge;
-	}
-	public function saveBadge(BadgeInterface $badge) {
-		// TODO: Auto-generated method stub
-
 	}
 
 }

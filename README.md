@@ -44,19 +44,39 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new ant\BadgeBundle\BadgeBundle(),
+        new ant\BadgeBundle\AntBadgeBundle()
     );
 }
 ```
-### Step3: Register the bundle's routes
+### Step3: Configuration 
+
+Register the bundle's routes
 
 Finally, add the following to your routing file:
 
 ``` yaml
-# app/config/routing.yml
+ant_badge:
+    db_driver: orm
+    badge_class: Yourproject\YourBundle\Entity\Badge
+``` 
 
-_imagine:
-    resource: ruta
+``` yaml
+
+# app/config/routing.yml
+badge_bundle:
+    resource: "@AntBadgeBundle/Resources/config/routing.yml"
+    prefix:   /badge
 ```
+
+
+Creating concrete model classes
+-------------------------------
+
+- For MongoDB_
+- For Doctrine_ORM_
+
+.. _MongoDB: concrete_mongo.rst
+.. _Doctrine_ORM: concrete_orm.rst
+
 
 Congratulations! You're ready to use badges in your site!

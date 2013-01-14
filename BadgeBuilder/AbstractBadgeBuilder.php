@@ -3,7 +3,6 @@
 namespace ant\BadgeBundle\BadgeBuilder;
 
 use ant\BadgeBundle\Model\BadgeInterface;
-use ant\BadgeBundle\Model\BadgeParticipantInterface;
 
 /**
  * Fluent interface badge builder

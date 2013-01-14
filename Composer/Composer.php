@@ -35,12 +35,9 @@ class Composer implements ComposerInterface
     public function newBadge()
     {
     	$badge = $this->badgeManager->createBadge();
-    	$badge = $this->badgeManager->saveBadge($badge);
+    	//$badge = $this->badgeManager->saveBadge($badge);
 
         return new NewBadgeBuilder($badge);
-    }
-    public function flush(BadgeInterface $badge){
-    	
     }
 
 }

@@ -67,6 +67,15 @@ class BadgeManager extends BaseBadgeManager
     	$this->em->flush();
     }
     /**
+     * Finds a badge by its ID
+     *
+     * @return BadgeInterface or null
+     */
+    public function findBadgeById($id)
+    {
+    	return $this->repository->find($id);
+    }
+    /**
      * Returns the fully qualified badge class name
      *
      * @return string

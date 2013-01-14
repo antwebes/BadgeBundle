@@ -19,7 +19,7 @@ interface BadgeManagerInterface
 	 *
 	 * @return BadgeInterface or null
 	 */
-	//function findBadgeById($id);
+	function findBadgeById($id);
 	
 	/**
      * Saves a badge
