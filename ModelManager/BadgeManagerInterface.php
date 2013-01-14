@@ -18,5 +18,12 @@ interface BadgeManagerInterface
 	 * @return BadgeInterface or null
 	 */
 	//function findBadgeById($id);
+	
+	/**
+     * Saves a badge
+     *
+     * @param BadgeInterface $badge
+     */
+	protected function doSaveMessage(BadgeInterface $badge);
 
 }

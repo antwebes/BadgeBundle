@@ -46,8 +46,8 @@ abstract class AbstractBadgeFormFactory
         $this->formFactory = $formFactory;
         $this->formType = $formType;
         $this->formName = $formName;
-       // $this->badgeClass = $badgeClass;
-        $this->badgeClass = 'ant\BadgeBundle\FormModel\NewBadge';
+        $this->badgeClass = $badgeClass;
+       // $this->badgeClass = 'ant\BadgeBundle\FormModel\NewBadge';
     }
 
     /**

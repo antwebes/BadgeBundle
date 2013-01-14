@@ -55,5 +55,25 @@ class BadgeManager extends BaseBadgeManager
     /**
 	* Creamos todas las funciones que queramos como el FOsMessageBundle
 	*/
+    
+    /**
+     * Saves a badge
+     *
+     * @param BadgeInterface $badge
+     */
+    protected function doSaveMessage(BadgeInterface $badge)
+    {
+    	$this->em->persist($message);
+    	$this->em->flush();
+    }
+    /**
+     * Returns the fully qualified badge class name
+     *
+     * @return string
+     */
+    public function getClass()
+    {
+    	return $this->class;
+    }
 
 }
