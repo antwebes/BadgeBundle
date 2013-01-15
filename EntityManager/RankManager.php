@@ -10,18 +10,19 @@
 
 namespace ant\BadgeBundle\EntityManager;
 
-use ant\BadgeBundle\ModelManager\BadgeRankManager as BaseBadgeRankManager;
+use ant\BadgeBundle\ModelManager\RankManager as BaseRankManager;
 
 use Doctrine\ORM\EntityManager;
 use ant\BadgeBundle\Model\BadgeInterface;
 use Doctrine\ORM\Query\Builder;
+use ant\BadgeBundle\Model\ParticipantInterface;
 
 /**
-* Default ORM BadgeRankManager.
+* Default ORM RankManager.
 *
 * @author Pablo <pablo@antweb.es>
 */
-class BadgeRankManager extends BaseBadgeRankManager
+class RankManager extends BaseRankManager
 {
     /**
 	* @var EntityManager
@@ -61,9 +62,43 @@ class BadgeRankManager extends BaseBadgeRankManager
     /**
 * Creamos todas las funciones que queramos como el FOsMessageBundle
 */
-
-    protected function createMessageMetadata()
+    /**
+     * Gets Rank of a participant 
+     * ie the badges that the user is trying to get
+     *
+     * @param ParticipantInterface $participant
+     * @return array of RankInterface
+     */
+    public function findBadgesOfParticipant(ParticipantInterface $participant)
     {
-        return new $this->metaClass();
+    	return $this->repository->createQueryBuilder('b')
+    	->innerJoin('b.participant', 'p')
+    
+    	->where('p.id = :participant_id')
+    	->setParameter('participant_id', $participant->getId())
+    
+    	->getQuery()
+    	->execute();
+    }
+    
+    /**
+     * Saves a rank
+     *
+     * @param RankInterface $rank
+     */
+    public function saveRank(RankInterface $rank)
+    {
+    	$this->em->persist($rank);
+    	$this->em->flush();
+    }
+    
+    /**
+     * Returns the fully qualified Rank class name
+     *
+     * @return string
+     */
+    public function getClass()
+    {
+    	return $this->class;
     }
 }

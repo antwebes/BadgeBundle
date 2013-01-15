@@ -11,16 +11,16 @@
 
 namespace ant\BadgeBundle\Entity;
 
-use ant\BadgeBundle\Model\BadgeRank as AbstractBadgeRank;
+use ant\BadgeBundle\Model\Rank as AbstractRank;
 
 /**
-* Default ORM implementation of BadgetInterface.
+* Default ORM implementation of RankInterface.
 *
 * Must be extended and properly mapped by the end developer.
 *
 * @author Pablo  <pablo@antweb.es>
 */
-abstract class BadgeRank extends AbstractBadgeRank
+abstract class Rank extends AbstractRank
 {
  
 	

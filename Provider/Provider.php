@@ -34,4 +34,13 @@ class Provider implements ProviderInterface
 		$badge = $this->badgeManager->findBadgeById($badgeId);
 		return $badge;
 	}
+	/**
+	 * Gets shelf ( allt badges available)
+	 *
+	 * @return array of BadgeInterface
+	 */
+	public function getShelf()
+	{
+		return $this->badgeManager->findAllBadge();
+	}
 }

@@ -27,5 +27,10 @@ interface BadgeManagerInterface
      * @param BadgeInterface $badge
      */
     function saveBadge(BadgeInterface $badge);
+    /**
+     * Get all badges
+     *
+     */
+    public function findAllBadge();
 
 }

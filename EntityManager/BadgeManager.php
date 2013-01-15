@@ -76,6 +76,27 @@ class BadgeManager extends BaseBadgeManager
     	return $this->repository->find($id);
     }
     /**
+     * Finds all badge 
+     *
+     * @return BadgeInterface or null
+     */
+    public function findAllBadge()
+    {
+    	return $this->repository->createQueryBuilder('b')    	
+    	->getQuery()
+    	->execute();
+    }
+    /**
+     * Deletes a badge
+     *
+     * @param BadgeInterface $badge the badge to delete
+     */
+    public function deleteBadge(BadgeInterface $badge)
+    {
+    	$this->em->remove($badge);
+    	$this->em->flush();
+    }
+    /**
      * Returns the fully qualified badge class name
      *
      * @return string

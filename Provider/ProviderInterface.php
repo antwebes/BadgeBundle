@@ -14,4 +14,11 @@ interface ProviderInterface
 	 * @return badge
 	 */
 	public function getBadge($badgeId);
+	
+	/**
+	 * Gets shelf ( all badges available)
+	 *
+	 * @return badges
+	 */
+	public function getShelf();
 }

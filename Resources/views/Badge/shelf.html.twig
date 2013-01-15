@@ -1,0 +1,42 @@
+{% extends 'AntBadgeBundle::layout.html.twig' %}
+
+{% block ant_badge_content %}
+
+	{% for badge in badges %}	
+	<div class="pin" id="pin{{ badge.id }}">	
+		{{ badge.id }}
+		{{ badge.description }}
+		<div class="btn"><a class="elim" data-id="{{ badge.id }}">Eliminar</a></div>
+	</div>
+			
+		<hr>
+	{% else %}
+		No se han recuperado badges
+	{% endfor %}
+	
+
+{% endblock %}
+
+{% block body_js_final %}
+{{ parent() }}
+		<script>
+				$(document).ready(function(){
+				$(".elim").click(function(){
+				var id =$(this).data("id");	
+				var ant_badge_delete = "{{ app.request.uriForPath('/badge/')}}" + id  ;
+				var foto = $("#foto"+id);
+	
+	                if ( confirm("¿Está seguro de que desea eliminar este badge?"))
+		                {	                   
+				          $.ajax({
+						           type: "DELETE",
+						           url: ant_badge_delete
+				           }).done(function( msg ) {
+				           $("#pin"+id).hide();
+				           });
+				                    }
+				  });
+				});
+			</script>
+			
+{% endblock %}

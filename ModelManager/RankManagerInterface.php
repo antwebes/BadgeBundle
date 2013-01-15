@@ -7,18 +7,11 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace ant\BadgeBundle\Model;
 
-abstract class BadgeRank implements BadgeRankInterface {
-	
-	protected $count;
+namespace ant\BadgeBundle\ModelManager;
 
-	public function getcount() {
-		return $this->count;
-	}
-	
-	public function setcount($count) {
-		$this->count = $count;
-	}
+interface RankManagerInterface
+{
 
+	public function createBadgeParticipant();
 }

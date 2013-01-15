@@ -22,7 +22,6 @@ class BadgeController extends ContainerAware
 	
 		if ($badge = $formHandler->process($form)) {
 			$this->container->get('ant_badge.badge_manager')->saveBadge($badge);
-			//$badge->saveBadge($badge);
 			return new RedirectResponse($this->container->get('router')->generate('ant_badge_view', array(
 					'badgeId' => $badge->getId()
 			)));
@@ -33,6 +32,18 @@ class BadgeController extends ContainerAware
 				'form' => $form->createView(),
 				'data' => $form->getData()
 		));
+	}
+	/**
+	 * Deletes a badge
+	 *
+	 * @return Response
+	 */
+	public function deleteAction($badgeId)
+	{
+		$badge = $this->getProvider()->getBadge($badgeId);
+		$this->container->get('ant_badge.badge_manager')->deleteBadge($badge);
+		
+	//	return new RedirectResponse($this->container->get('router')->generate('ant_badge_shelf'));//me redirige a la estanteria de insignias
 	}
 	/**
 	 * Displays a badge
@@ -47,6 +58,20 @@ class BadgeController extends ContainerAware
 		return $this->container->get('templating')->renderResponse('AntBadgeBundle:Badge:badge.html.twig', array(
 				'badge' => $badge
 		));
+	}
+	/**
+	 * Displays all badges
+	 *
+	 * @return Response
+	 */
+	public function shelfAction()
+	{
+		$badges = $this->getProvider()->getShelf();
+		if ($badges) return $this->container->get('templating')
+			->renderResponse('AntBadgeBundle:Badge:shelf.html.twig', array(
+            	'badges' => $badges
+        		));
+		else throw new NotFoundHttpException(sprintf("No badges: '%s' found in shelf", $badges));
 	}
 	
 	/**

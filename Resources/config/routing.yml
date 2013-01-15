@@ -1,10 +1,15 @@
-badge_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AntBadgeBundle:Default:index }
-
+ant_badge_shelf:
+    pattern: /shelf
+    defaults: { _controller: AntBadgeBundle:Badge:shelf }
 ant_badge_view:
-    pattern: /badge/{badgeId}
+    pattern: /id/{badgeId}
     defaults: { _controller: AntBadgeBundle:Badge:badge }
 ant_badge_new:
-    pattern: /badge-new
+    pattern: /new
     defaults: { _controller: AntBadgeBundle:Badge:newBadge }
+ant_badge_delete:
+    pattern: /{badgeId}
+    defaults: { _controller: AntBadgeBundle:Badge:delete }
+    requirements:
+        _method: DELETE
+        id: "\d+"
