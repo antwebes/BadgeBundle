@@ -73,6 +73,7 @@ class BadgeManager extends BaseBadgeManager
      */
     public function findBadgeById($id)
     {
+    	//ldd($this->repository->find($id));
     	return $this->repository->find($id);
     }
     /**

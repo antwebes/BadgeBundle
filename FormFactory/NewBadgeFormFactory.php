@@ -16,8 +16,9 @@ class NewBadgeFormFactory extends AbstractBadgeFormFactory
 	*/
     public function create()
     {
-        $badge = $this->createModelInstance();
+    	$badge = $this->createModelInstance();
+    	
+    	return $this->formFactory->createNamed($this->formName, $this->formType, $badge);
 
-        return $this->formFactory->createNamed($this->formName, $this->formType, $badge);
     }
 }

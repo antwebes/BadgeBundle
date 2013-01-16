@@ -8,8 +8,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use ant\BadgeBundle\Provider\ProviderInterface;
 
 class BadgeController extends ContainerAware
-{
-	
+{	
 	/**
 	 * Create a badge
 	 *
@@ -31,6 +30,37 @@ class BadgeController extends ContainerAware
 		return $this->container->get('templating')->renderResponse('AntBadgeBundle:Badge:newBadge.html.twig', array(
 				'form' => $form->createView(),
 				'data' => $form->getData()
+		));
+	}
+	/**
+	 * Edit a badge
+	 *
+	 * @return Response
+	 */
+	public function editBadgeAction($id)
+	{
+		$badge = $this->getProvider()->getBadge($id);
+		$form = $this->container->get('ant_badge.badge_form.factory')->createForm();
+		
+		//$builder = $this->container->get('ant_badge.composer')->composeBadge($badge);
+		
+		$form->setData($badge);
+		/*
+		$formHandler = $this->container->get('ant_badge.new_badge_form.handler');
+		
+		if ($badge = $formHandler->process($form)) {
+			//ldd($form, $badge);
+			$this->container->get('ant_badge.badge_manager')->saveBadge($badge);
+			return new RedirectResponse($this->container->get('router')->generate('ant_badge_view', array(
+					'badgeId' => $badge->getId()
+			)));
+			return new RedirectResponse($this->container->get('router')->generate('badge_homepage'));
+				
+		}*/
+		return $this->container->get('templating')->renderResponse('AntBadgeBundle:Badge:edit.html.twig', array(
+				'form' => $form->createView(),
+				//'data' => $form->getData(),
+				'badge' => $badge
 		));
 	}
 	/**

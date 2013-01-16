@@ -13,3 +13,6 @@ ant_badge_delete:
     requirements:
         _method: DELETE
         id: "\d+"
+ant_badge_edit:
+    pattern: /{id}/edit
+    defaults: { _controller: AntBadgeBundle:Badge:editBadge }

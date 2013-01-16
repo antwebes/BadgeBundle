@@ -11,8 +11,14 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  *
  * @author Pablo <pablo@antweb.es>
  */
-class NewBadgeFormType extends AbstractType
+class BadgeFormType extends AbstractType
 {
+	private $badgeClass;
+	
+	public function __construct($badgeClass)
+	{
+		$this->badgeClass = $badgeClass;
+	}
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -25,12 +31,12 @@ class NewBadgeFormType extends AbstractType
     {
         $resolver->setDefaults(array(
             'intention'  => 'badge',
-        	
+        	'data_class' => $this->badgeClass,
         ));
     }
 
     public function getName()
     {
-        return 'ant_badge_new_badge';
+        return 'ant_badge_badge';
     }
 }
