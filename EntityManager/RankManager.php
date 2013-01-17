@@ -13,7 +13,7 @@ namespace ant\BadgeBundle\EntityManager;
 use ant\BadgeBundle\ModelManager\RankManager as BaseRankManager;
 
 use Doctrine\ORM\EntityManager;
-use ant\BadgeBundle\Model\BadgeInterface;
+use ant\BadgeBundle\Model\RankInterface;
 use Doctrine\ORM\Query\Builder;
 use ant\BadgeBundle\Model\ParticipantInterface;
 
@@ -39,24 +39,19 @@ class RankManager extends BaseRankManager
 	*/
     protected $class;
 
-    /**
-	* @var string
-	*/
-    protected $metaClass;
 
     /**
 	* Constructor.
 	*
 	* @param EntityManager $em
-	* @param string $class
-	* @param string $metaClass
+	* @param string $class	
 	*/
-    public function __construct(EntityManager $em, $class, $metaClass)
+    public function __construct(EntityManager $em, $class)
     {
         $this->em = $em;
         $this->repository = $em->getRepository($class);
         $this->class = $em->getClassMetadata($class)->name;
-        $this->metaClass = $em->getClassMetadata($metaClass)->name;
+        
     }
 
     /**

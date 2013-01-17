@@ -15,11 +15,18 @@ namespace ant\BadgeBundle\ModelManager;
 class RankManager implements RankManagerInterface
 {
   
-    public function createBadgeParticipant()
+    /*public function createBadgeParticipant()
     {
     	$class = $this->getClass();
     	$badge = new $class;
     	
     	return $badge;
-    }
+    }*/
+	public function createRank()
+	{
+		$class = $this->getClass();
+		$rank = new $class;
+		 
+		return $rank;
+	}
 }

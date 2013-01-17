@@ -17,5 +17,11 @@ interface ComposerInterface
      * @return NewBadgeBuilder
      */
     public function newBadge();
+    /**
+     * Starts composing a rank
+     *
+     * @return NewRankBuilder
+     */
+    public function newRank();
 
 }

@@ -13,5 +13,7 @@ namespace ant\BadgeBundle\ModelManager;
 interface RankManagerInterface
 {
 
-	public function createBadgeParticipant();
+	//public function createBadgeParticipant();
+	public function createRank();
+	
 }

@@ -36,7 +36,7 @@ interface RankInterface
 	 * Set and get acquired, field boolean, true = badge acquired for the user
 	 */
 	public function getAcquired();
-	public function setAcquired();
+	public function setAcquired($acquired);
 	/**
 	 * Set and get badge, the badge that user want to win
 	 */

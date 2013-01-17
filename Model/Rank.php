@@ -24,8 +24,9 @@ abstract class Rank implements RankInterface {
 	/**
 	 * boolean true = badge wins
 	 *
+	 * @var boolean
 	 */
-	protected $acquired;
+	protected $acquired=false;
 	
 	/**
 	 * Badge contained in this rank

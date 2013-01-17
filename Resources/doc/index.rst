@@ -77,6 +77,29 @@ Finally, add the following to your routing file:
 	    prefix:   /badge
 
 
+Choose your user
+----------------
+
+The rank has a user, called *participant*.
+BadgeBundle will only refer to them using the `ParticipantInterface`.
+This allows you to use any user class. Just make it implement this interface.
+
+For exemple, if your user class is ``Acme\UserBundle\Document\User``::
+
+    // src/Acme/UserBundle/Document/User.php
+
+    use ant\BadgeBundle\Model\ParticipantInterface as ParticipantBadge;
+
+    /**
+     * @ORM\Entity
+     */
+    class User implements ParticipantBadge
+    {
+        // your code here
+    }
+
+If you need a bundle providing a base user, see http://github.com/FriendsOfSymfony/FOSUserBundle
+
 
 Creating concrete model classes
 -------------------------------
@@ -87,3 +110,23 @@ Creating concrete model classes
 
 
 Congratulations! You're ready to use badges in your site!
+
+Basic Usage
+===========
+
+Compose a rank
+--------------
+
+Create a new rank, from a controller::
+
+		$u = $this->get('security.context')->getToken()->getUser();
+    	$composer = $this->get('ant_badge.composer');
+    	
+    	$rank = $composer->newRank()
+	    	->setcount(3)
+	    	->setParticipant($u)
+	    	//->setAcquired(true)
+	    	->setWonAt(new \DateTime('now'))
+	    	->getRank();    	
+    	
+    	$this->get('ant_badge.rank_manager')->saveRank($rank);

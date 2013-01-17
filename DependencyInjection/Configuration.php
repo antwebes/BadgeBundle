@@ -24,6 +24,7 @@ class Configuration implements ConfigurationInterface
         	->children()
         		->scalarNode('db_driver')->cannotBeOverwritten()->isRequired()->cannotBeEmpty()->end()
         		->scalarNode('badge_class')->isRequired()->cannotBeEmpty()->end()
+        		->scalarNode('rank_class')->isRequired()->cannotBeEmpty()->end()
 
         		->arrayNode('new_badge_form')
 	        		->addDefaultsIfNotSet()

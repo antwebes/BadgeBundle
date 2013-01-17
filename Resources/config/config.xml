@@ -10,6 +10,7 @@
         </service>
         <service id="ant_badge.composer" class="ant\BadgeBundle\Composer\Composer" public="true">
             <argument type="service" id="ant_badge.badge_manager" />
+            <argument type="service" id="ant_badge.rank_manager" />
         </service>
         <service id="ant_badge.deleter.default" class="ant\BadgeBundle\Deleter\Deleter" public="false">
             <argument type="service" id="ant_badge.authorizer" />
