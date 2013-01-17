@@ -6,6 +6,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use ant\BadgeBundle\Provider\ProviderInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 class BadgeController extends ContainerAware
 {	
@@ -37,26 +38,22 @@ class BadgeController extends ContainerAware
 	 *
 	 * @return Response
 	 */
-	public function editBadgeAction($id)
+	public function editBadgeAction($id, Request $request)
 	{
 		$badge = $this->getProvider()->getBadge($id);
 		$form = $this->container->get('ant_badge.badge_form.factory')->createForm();
 		
-		//$builder = $this->container->get('ant_badge.composer')->composeBadge($badge);
-		
 		$form->setData($badge);
-		/*
-		$formHandler = $this->container->get('ant_badge.new_badge_form.handler');
 		
-		if ($badge = $formHandler->process($form)) {
-			//ldd($form, $badge);
-			$this->container->get('ant_badge.badge_manager')->saveBadge($badge);
-			return new RedirectResponse($this->container->get('router')->generate('ant_badge_view', array(
-					'badgeId' => $badge->getId()
-			)));
-			return new RedirectResponse($this->container->get('router')->generate('badge_homepage'));
-				
-		}*/
+		if ('POST' === $request->getMethod()) {
+			$form->bind($request);
+		
+			if ($form->isValid()) {
+				$this->container->get('ant_badge.badge_manager')->saveBadge($badge);
+				return new RedirectResponse($this->container->get('router')->generate('ant_badge_shelf'));
+			}
+		}
+		
 		return $this->container->get('templating')->renderResponse('AntBadgeBundle:Badge:edit.html.twig', array(
 				'form' => $form->createView(),
 				//'data' => $form->getData(),
