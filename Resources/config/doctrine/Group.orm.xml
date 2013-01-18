@@ -14,18 +14,10 @@ with this source code in the file LICENSE.
                         xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
 http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <mapped-superclass name="ant\BadgeBundle\Entity\Badge" >
+    <mapped-superclass name="ant\BadgeBundle\Entity\Group">
 
         <field name="name" column="name" type="text" />
-
-        <field name="description" column="description" type="text" length="1024" nullable="false" />
-
-        <field name="image" column="image" type="text" />
         
-        <field name="count" column="count" type="integer" />
-        
-        <field name="class" column="class" type="text" />
-
     </mapped-superclass>
 
 </doctrine-mapping>

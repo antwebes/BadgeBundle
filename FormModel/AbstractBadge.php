@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\FormModel;
 
+use ant\BadgeBundle\Model\BadgeInterface;
+
 abstract class AbstractBadge
 {
 	
@@ -24,6 +26,30 @@ abstract class AbstractBadge
      * @var string
      */
     protected $image;
+    /**
+     * The badge child
+     *
+     * @var string
+     */
+    protected $child;
+    /**
+     * amount necessary to obtain the badge
+     *
+     * @var int
+     */
+    protected $count;
+    /**
+     * The class associated
+     *
+     * @var string
+     */
+    protected $class;
+    /**
+     * The type associated
+     *
+     * @var string
+     */
+    protected $type;
     
     /**
      * @return string
@@ -75,6 +101,44 @@ abstract class AbstractBadge
     public function setDescription($description)
     {
         $this->description = $description;
+    }
+    
+    public function getChild() {
+    	return $this->child;
+    }
+    
+    public function setChild(BadgeInterface $child) {
+    	$this->child = $child;
+    }
+    /**
+     * @return int
+     */
+    public function getCount()
+    {
+    	return $this->count;
+    }
+    /**
+     * @param  int
+     * @return null
+     */
+    public function setCount($count)
+    {
+    	$this->count = $count;
+    }
+    /**
+     * @return string
+     */
+    public function getClass()
+    {
+    	return $this->class;
+    }
+    /**
+     * @param  string
+     * @return null
+     */
+    public function setClass($class)
+    {
+    	$this->class = $class;
     }
 
 }

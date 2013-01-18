@@ -63,5 +63,27 @@ class NewBadgeBuilder extends AbstractBadgeBuilder
 	
 		return $this;
 	}
+	/**
+	 * @param BadgeInterface
+	 * @return BadgeBuilder (fluent interface)
+	 */
+	public function setChild(BadgeInterface $child)
+	{
+		$this->badge->setChild($child);
+	
+		return $this;
+	}
+	public function setcount($count) {
+	
+		$this->badge->setCount($count);
+	
+		return $this;
+	}
+	public function setClass($class){
+		
+		$this->badge->setClass($class);
+		
+		return $this;
+	}
 
 }

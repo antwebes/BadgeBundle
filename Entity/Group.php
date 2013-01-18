@@ -11,7 +11,7 @@
 
 namespace ant\BadgeBundle\Entity;
 
-use ant\BadgeBundle\Model\Badge as BaseBadge;
+use ant\BadgeBundle\Model\BadgeGroup as AbstractGroup;
 
 /**
 * Default ORM implementation of BadgetInterface.
@@ -20,12 +20,8 @@ use ant\BadgeBundle\Model\Badge as BaseBadge;
 *
 * @author Pablo  <pablo@antweb.es>
 */
-abstract class Badge extends BaseBadge
+abstract class Group extends AbstractGroup
 {
-	public function __toString()
-	{
-		return $this->getName();
-	}
  
 	
 }

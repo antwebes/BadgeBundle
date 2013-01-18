@@ -33,4 +33,9 @@ interface BadgeManagerInterface
      */
     public function findAllBadge();
 
+    /**
+     * 
+     * @param string $class
+     */
+    public function findBadgeByClass($class);
 }

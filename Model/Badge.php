@@ -23,6 +23,33 @@ abstract class Badge implements BadgeInterface {
 	protected $name;
 	protected $description;
 	protected $image;
+	/**
+	 * amount necessary to obtain the badge
+	 * @var int
+	 */
+	protected $count;
+	/**
+	 * Badge the badge belongs to
+	 *
+	 * @var BadgeInterface
+	 */
+	protected $child;
+	/**
+	 * Badges contained in this badge
+	 *
+	 * @var Collection of BadgeInterface
+	 */
+	protected $badges;
+	/**
+	 * Class belong badge
+	 *
+	 * @var string
+	 */
+	protected $class;
+	/**
+	 * type associated
+	 */
+	protected $type;
 
 /*	public function __construct($name) {
 		$this->name = $name;
@@ -59,6 +86,47 @@ abstract class Badge implements BadgeInterface {
 	public function setImage($image) {
 		$this->image = $image;
 	}
-
-
+	public function getChild() {
+		return $this->child;
+	}
+	
+	public function setChild(BadgeInterface $child) {
+		$this->child = $child;
+	}
+	/**
+	 * @see ant\BadgeBundle\Model\BadgeInterface::adBadge()
+	 */
+	public function addBadge(BadgeInterface $badge)
+	{
+		$this->badges->add($badge);
+	}
+	
+	/**
+	 * @see ant\BadgeBundle\Model\BadgeInterface::getBadges()
+	 */
+	public function getBadges()
+	{
+		return $this->badges->toArray();
+	}
+	public function getCount() {
+		return $this->cound;
+	}
+	
+	public function setCount($count) {
+		$this->count = $count;
+	}
+	public function getClass() {
+		return $this->class;
+	}
+	
+	public function setClass($class) {
+		$this->class = $class;
+	}
+	public function getType() {
+		return $this->type;
+	}
+	
+	public function setType($type) {
+		$this->type = $type;
+	}
 }

@@ -38,7 +38,6 @@ class BadgeManager extends BaseBadgeManager
 	*/
     protected $class;
 
-
     /**
 	* Constructor.
 	*
@@ -97,6 +96,16 @@ class BadgeManager extends BaseBadgeManager
     	$this->em->remove($badge);
     	$this->em->flush();
     }
+    /**
+     * Finds a badge by its class
+     *
+     * @return BadgeInterface or null
+     */
+    public function findBadgeByClass($class)
+    {
+    	return $this->repository->findByClass($class);
+    }
+    
     /**
      * Returns the fully qualified badge class name
      *

@@ -24,6 +24,11 @@ class NewBadgeFormHandler extends AbstractBadgeFormHandler
             ->setDescription($badge->getDescription())
             ->setName($badge->getName())
             ->setImage($badge->getImage())
+            ->setChild($badge->getChild())
+            ->setCount($badge->getCount())
+            ->setClass($badge->getClass())
+            ->setType($badge->getType())
             ->getBadge();
     }
 }
+
