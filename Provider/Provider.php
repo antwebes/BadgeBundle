@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\Provider;
 
+use ant\BadgeBundle\ModelManager\RankManagerInterface;
+
 use ant\BadgeBundle\Event\BadgeEvent;
 use ant\BadgeBundle\Model\GroupInterface;
 use ant\BadgeBundle\ModelManager\GroupManagerInterface;
@@ -27,11 +29,18 @@ class Provider implements ProviderInterface
 	 * @var GroupManagerInterface
 	 */
 	protected $groupManager;
+	/**
+	 * The rank manager
+	 *
+	 * @var RankManagerInterface
+	 */
+	protected $rankManager;
 	
-	public function __construct(BadgeManagerInterface $badgeManager, GroupManagerInterface $groupManager)
+	public function __construct(BadgeManagerInterface $badgeManager, GroupManagerInterface $groupManager, RankManagerInterface $rankManager)
 	{
 		$this->badgeManager = $badgeManager;
 		$this->groupManager = $groupManager;
+		$this->rankManager = $rankManager;
 	}
 	
 	/**
@@ -66,7 +75,7 @@ class Provider implements ProviderInterface
 	/**
 	 * Gets the group of a class (only one)
 	 */
-	public function getGroupOfClass($class)
+	public function getGroupByClass($class)
 	{
 		return $this->groupManager->findGroupByClass($class);
 	}
@@ -74,7 +83,7 @@ class Provider implements ProviderInterface
 	 * Gets badges of a group
 	 * @return array BadgeInterface
 	 */
-	public function getBadgesOfGroup(GroupInterface $group)
+	public function getBadgesByGroup(GroupInterface $group)
 	{
 		return $this->badgeManager->findBadgesByGroup($group);
 	}
@@ -83,8 +92,14 @@ class Provider implements ProviderInterface
 	 */
 	public function RookieUser(BadgeEvent $event)
 	{
-		$group = $this->getGroupOfClass($event->getClass());
-		$badges = $this->getBadgesOfGroup($group);
+		$group = $this->getGroupByClass($event->getClass());
+		$badges = $this->getBadgesByGroup($group);
+		foreach ($badges as $badge)
+		{
+			$rank= $this->rankManager->findRankOfBadge($badge);
+			if ( $rank->getAcquired() != true )//That badge was already achieved
+				 return $rank;
+		}
 		return $badges;
 	}
 }

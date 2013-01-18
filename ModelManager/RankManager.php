@@ -12,7 +12,7 @@ namespace ant\BadgeBundle\ModelManager;
 
 
 
-class RankManager implements RankManagerInterface
+abstract class RankManager implements RankManagerInterface
 {
   
     /*public function createBadgeParticipant()
