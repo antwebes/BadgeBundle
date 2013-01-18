@@ -7,6 +7,8 @@ use ant\BadgeBundle\ModelManager\BadgeManagerInterface;
 use ant\BadgeBundle\ModelManager\RankManagerInterface;
 use ant\BadgeBundle\BadgeBuilder\NewBadgeBuilder;
 use ant\BadgeBundle\BadgeBuilder\NewRankBuilder;
+use ant\BadgeBundle\BadgeBuilder\NewGroupBuilder;
+use ant\BadgeBundle\ModelManager\GroupManagerInterface;
 
 /**
  * Factory for badge builders
@@ -27,12 +29,19 @@ class Composer implements ComposerInterface
      * @var RankManagerInterface
      */
     protected $rankManager;
+    /**
+     * Group manager
+     *
+     * @var GroupManagerInterface
+     */
+    protected $groupManager;
 
 
-    public function __construct(BadgeManagerInterface $badgeManager, RankManagerInterface $rankManager)
+    public function __construct(BadgeManagerInterface $badgeManager, RankManagerInterface $rankManager, GroupManagerInterface $groupManager)
     {
         $this->badgeManager = $badgeManager;
         $this->rankManager = $rankManager;
+        $this->groupManager = $groupManager;
     }
 
     /**
@@ -57,6 +66,18 @@ class Composer implements ComposerInterface
     	$rank = $this->rankManager->createRank();
     
     	return new NewRankBuilder($rank);
+    }
+    /**
+     * Starts composing a group
+     *
+     * @return NewGroupBuilder
+     */
+    public function newGroup()
+    {
+    	$badge = $this->groupManager->createGroup();
+    	//$badge = $this->badgeManager->saveBadge($badge);
+    
+    	return new NewBadgeBuilder($badge);
     }
     
 

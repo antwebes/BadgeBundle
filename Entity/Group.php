@@ -11,7 +11,7 @@
 
 namespace ant\BadgeBundle\Entity;
 
-use ant\BadgeBundle\Model\BadgeGroup as AbstractGroup;
+use ant\BadgeBundle\Model\Group as AbstractGroup;
 
 /**
 * Default ORM implementation of BadgetInterface.

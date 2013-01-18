@@ -28,10 +28,6 @@ interface BadgeInterface
 	
 	public function setImage($image);
 	
-	public function getChild();
-	
-	public function setChild(BadgeInterface $child);
-	
 	public function addBadge(BadgeInterface $badge);
 	
 	public function getBadges();
@@ -40,7 +36,4 @@ interface BadgeInterface
 	
 	public function setCount($count);
 	
-	public function getType();
-	
-	public function setType($type);
 }

@@ -46,26 +46,6 @@ abstract class AbstractBadgeFormHandler
         return false;
     }
     
-    /**
-     * Processes the valid form
-     *
-     * @param Form
-     * @return BadgeInterface 
-     */
-    public function processValidForm(Form $form)
-    {
-    	$badge = $this->composeBadge($form->getData()); // $badge is a NewBadgeBuilder
-        
-    	return $badge;
-    }
-    
-    /**
-     * Composes a badge from the form data
-     *
-     * @param AbstractBadge $badge
-     * @return BadgeInterface the composed badge
-     */
-    abstract protected function composeBadge(AbstractBadge $badge);
     
     
 }

@@ -16,3 +16,6 @@ ant_badge_delete:
 ant_badge_edit:
     pattern: /{id}/edit
     defaults: { _controller: AntBadgeBundle:Badge:editBadge }
+ant_group_new:
+    pattern: /new/group
+    defaults: { _controller: AntBadgeBundle:Group:newGroup }

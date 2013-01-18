@@ -8,12 +8,17 @@
 	<parameters>
         <parameter key="ant_badge.badge_class" />
         <parameter key="ant_badge.rank_class" />
+        <parameter key="ant_badge.group_class" />
     </parameters>
     
     <services>
         <service id="ant_badge.badge_manager" class="ant\BadgeBundle\EntityManager\BadgeManager" public="true">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument>%ant_badge.badge_class%</argument>
+        </service>
+        <service id="ant_badge.group_manager" class="ant\BadgeBundle\EntityManager\GroupManager" public="true">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%ant_badge.group_class%</argument>
         </service>
         <service id="ant_badge.rank_manager" class="ant\BadgeBundle\EntityManager\RankManager" public="true">
             <argument type="service" id="doctrine.orm.entity_manager" />

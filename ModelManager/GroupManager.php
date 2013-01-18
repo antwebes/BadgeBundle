@@ -10,7 +10,7 @@
 
 namespace ant\BadgeBundle\ModelManager;
 
-
+use ant\BadgeBundle\Model\GroupInterface;
 
 class GroupManager implements GroupManagerInterface
 {

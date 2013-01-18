@@ -18,6 +18,9 @@ interface GroupInterface
 	public function getName();
 	
 	public function setName($name);
-
+	
+	public function getType();
+	
+	public function setType($type);
 
 }

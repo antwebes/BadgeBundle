@@ -24,7 +24,6 @@ http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
         
         <field name="count" column="count" type="integer" />
         
-        <field name="class" column="class" type="text" />
 
     </mapped-superclass>
 

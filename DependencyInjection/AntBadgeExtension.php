@@ -37,8 +37,12 @@ class AntBadgeExtension extends Extension
 
         $container->setParameter('ant_badge.badge_class', $config['badge_class']);
         $container->setParameter('ant_badge.rank_class', $config['rank_class']);
+        $container->setParameter('ant_badge.group_class', $config['group_class']);
         
         $container->setParameter('ant_badge.new_badge_form.model', $config['new_badge_form']['model']);
         $container->setParameter('ant_badge.new_badge_form.name', $config['new_badge_form']['name']);
+        
+        $container->setParameter('ant_badge.new_group_form.name', $config['new_group_form']['name']);
+        $container->setParameter('ant_badge.new_group_form.model', $config['new_group_form']['model']);
     }
 }

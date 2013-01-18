@@ -13,6 +13,15 @@ use ant\BadgeBundle\Model\RankInterface;
 abstract class AbstractBadgeBuilder
 {
    
-    
+	/**
+	 * @param BadgeInterface
+	 * @return BadgeBuilder (fluent interface)
+	 */
+	public function setName($name)
+	{
+		$this->badge->setName($name);
+	
+		return $this;
+	}    
 
 }

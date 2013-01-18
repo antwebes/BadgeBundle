@@ -10,7 +10,9 @@
 
 namespace ant\BadgeBundle\EntityManager;
 
-use ant\BadgeBundle\ModelManager\BadgeGroupManager as BaseBadgeGroupManager;
+use ant\BadgeBundle\Model\GroupInterface;
+
+use ant\BadgeBundle\ModelManager\GroupManager as BaseGroupManager;
 
 use Doctrine\ORM\EntityManager;
 use antwebes\BadgeBundle\Model\BadgeInterface;
@@ -21,7 +23,7 @@ use Doctrine\ORM\Query\Builder;
 *
 * @author Pablo <pablo@antweb.es>
 */
-class GroupManager extends BaseBadgeGroupManager
+class GroupManager extends BaseGroupManager
 {
     /**
 	* @var EntityManager
@@ -48,20 +50,29 @@ class GroupManager extends BaseBadgeGroupManager
 	*
 	* @param EntityManager $em
 	* @param string $class
-	* @param string $metaClass
 	*/
-    public function __construct(EntityManager $em, $class, $metaClass)
+    public function __construct(EntityManager $em, $class)
     {
         $this->em = $em;
         $this->repository = $em->getRepository($class);
         $this->class = $em->getClassMetadata($class)->name;
-        $this->metaClass = $em->getClassMetadata($metaClass)->name;
     }
 
     /**
-* Creamos todas las funciones que queramos como el FOsMessageBundle
-*/
-
+	* Creamos todas las funciones que queramos como el FOsMessageBundle
+	*/
+    
+    /**
+     * Saves a group
+     *
+     * @param GroupInterface $badge
+     */
+    public function saveGroup(GroupInterface $group)
+    {
+    	$this->em->persist($group);
+    	$this->em->flush();
+    }
+	
     protected function createMessageMetadata()
     {
         return new $this->metaClass();

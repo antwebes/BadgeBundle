@@ -7,11 +7,14 @@
 	<parameters>
         <parameter key="ant_badge.new_badge_form.name" />
         <parameter key="ant_badge.new_badge_form.model" />
+        <parameter key="ant_badge.new_group_form.name" />
+        <parameter key="ant_badge.new_group_form.model" />
     </parameters>
 
     <services>
 
 		 <service id="ant_badge.new_badge_form.type" class="ant\BadgeBundle\FormType\NewBadgeFormType" public="true" />
+		 <service id="ant_badge.new_group_form.type" class="ant\BadgeBundle\FormType\NewGroupFormType" public="true" />
 		 
 		 <service id="ant_badge.badge_form.type" class="ant\BadgeBundle\FormType\BadgeFormType" public="true" >
 		 	<argument>%ant_badge.badge_class%</argument>
@@ -23,6 +26,12 @@
             <argument>%ant_badge.new_badge_form.name%</argument>
             <argument>%ant_badge.new_badge_form.model%</argument>          
         </service>
+        <service id="ant_badge.new_group_form.factory" class="ant\BadgeBundle\FormFactory\NewGroupFormFactory" public="true">
+            <argument type="service" id="form.factory" />
+            <argument type="service" id="ant_badge.new_group_form.type" />
+            <argument>%ant_badge.new_group_form.name%</argument>
+            <argument>%ant_badge.new_group_form.model%</argument>          
+        </service>
         <service id="ant_badge.badge_form.factory" class="ant\BadgeBundle\FormFactory\BadgeFormFactory" public="true">
             <argument type="service" id="form.factory" />
          	<argument type="service" id="ant_badge.badge_form.type" />
@@ -31,6 +40,10 @@
         </service>
         
         <service id="ant_badge.new_badge_form.handler" class="ant\BadgeBundle\FormHandler\NewBadgeFormHandler" scope="request" public="true">
+            <argument type="service" id="request" />
+            <argument type="service" id="ant_badge.composer" />
+        </service>
+        <service id="ant_badge.new_group_form.handler" class="ant\BadgeBundle\FormHandler\NewGroupFormHandler" scope="request" public="true">
             <argument type="service" id="request" />
             <argument type="service" id="ant_badge.composer" />
         </service>

@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\FormHandler;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Form;
 use ant\BadgeBundle\FormModel\AbstractBadge;
 use ant\BadgeBundle\FormModel\NewBadge;
 
@@ -24,11 +26,21 @@ class NewBadgeFormHandler extends AbstractBadgeFormHandler
             ->setDescription($badge->getDescription())
             ->setName($badge->getName())
             ->setImage($badge->getImage())
-            ->setChild($badge->getChild())
             ->setCount($badge->getCount())
-            ->setClass($badge->getClass())
-            ->setType($badge->getType())
             ->getBadge();
+    }
+    
+    /**
+     * Processes the valid form
+     *
+     * @param Form
+     * @return BadgeInterface
+     */
+    public function processValidForm(Form $form)
+    {
+    	$badge = $this->composeBadge($form->getData()); // $badge is a NewBadgeBuilder
+    
+    	return $badge;
     }
 }
 
