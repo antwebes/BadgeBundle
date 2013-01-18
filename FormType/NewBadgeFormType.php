@@ -19,7 +19,14 @@ class NewBadgeFormType extends AbstractType
             ->add('description', 'textarea')
             ->add('name', 'text')
             ->add('image', 'text')
-            ->add('count', 'integer');
+            ->add('count', 'integer')
+        	->add('badgeGroup', 'entity', array(
+				'label' =>'Group: ',
+				'empty_value'=> '',
+				'class' => 'chatea\\ChatBundle\\Entity\\Group',
+				'query_builder' => function ($repositorio) {
+				return $repositorio->createQueryBuilder('g')->orderBy('g.name', 'ASC');
+				}, ));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

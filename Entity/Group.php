@@ -22,6 +22,9 @@ use ant\BadgeBundle\Model\Group as AbstractGroup;
 */
 abstract class Group extends AbstractGroup
 {
- 
+	public function __toString()
+	{
+		return $this->getName();
+	}
 	
 }

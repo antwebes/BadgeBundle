@@ -36,15 +36,25 @@ class NewGroupBuilder extends AbstractBadgeBuilder
 	
 	public function setType($type)
 	{
-		$this->badge->setType($type);
+		$this->group->setType($type);
 	
 		return $this;
 	}
 	
 	public function setClass($class){
 		
-		$this->badge->setClass($class);
+		$this->group->setClass($class);
 		
+		return $this;
+	}
+	/**
+	 * @param BadgeInterface
+	 * @return BadgeBuilder (fluent interface)
+	 */
+	public function setName($name)
+	{
+		$this->group->setName($name);
+	
 		return $this;
 	}
 

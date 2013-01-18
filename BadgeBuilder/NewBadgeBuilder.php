@@ -2,6 +2,7 @@
 
 namespace ant\BadgeBundle\BadgeBuilder;
 
+use ant\BadgeBundle\Model\GroupInterface;
 use ant\BadgeBundle\Model\BadgeInterface;
 
 /**
@@ -61,5 +62,24 @@ class NewBadgeBuilder extends AbstractBadgeBuilder
 	
 		return $this;
 	}
-
+	/**
+	 * @param BadgeInterface
+	 * @return BadgeBuilder (fluent interface)
+	 */
+	public function setName($name)
+	{
+		$this->badge->setName($name);
+	
+		return $this;
+	}
+	/**
+	* @param BadgeInterface
+	* @return BadgeBuilder (fluent interface)
+	*/
+	public function setBadgeGroup(GroupInterface $group)
+	{
+		$this->badge->setBadgeGroup($group);
+	
+		return $this;
+	}
 }

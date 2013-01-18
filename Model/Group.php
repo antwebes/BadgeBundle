@@ -27,9 +27,6 @@ abstract class Group implements GroupInterface {
 	protected $type;
 
 
-	public function __construct($name) {
-		$this->name = $name;
-	}
 
 	public function getId() {
 		return $this->id;

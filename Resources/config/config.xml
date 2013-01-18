@@ -7,6 +7,7 @@
  	<services>
 		<service id="ant_badge.provider" class="ant\BadgeBundle\Provider\Provider" public="true">
             <argument type="service" id="ant_badge.badge_manager" />
+            <argument type="service" id="ant_badge.group_manager" />
         </service>
         <service id="ant_badge.composer" class="ant\BadgeBundle\Composer\Composer" public="true">
             <argument type="service" id="ant_badge.badge_manager" />

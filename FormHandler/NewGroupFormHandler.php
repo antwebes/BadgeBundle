@@ -5,7 +5,7 @@ namespace ant\BadgeBundle\FormHandler;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Form;
 use ant\BadgeBundle\FormModel\AbstractBadge;
-use ant\BadgeBundle\FormModel\NewBadge;
+use ant\BadgeBundle\FormModel\NewGroup;
 
 class NewGroupFormHandler extends AbstractBadgeFormHandler
 {
@@ -19,13 +19,13 @@ class NewGroupFormHandler extends AbstractBadgeFormHandler
     public function composeGroup(AbstractBadge $group)
     {
         if (!$group instanceof NewGroup) {
-            throw new \InvalidArgumentException(sprintf('Group must be a NewBadge instance, "%s" given', get_class($message)));
+            throw new \InvalidArgumentException(sprintf('Group must be a NewBadge instance, "%s" given', get_class($group)));
         }
 
         return $this->composer->newGroup()
             ->setName($group->getName())
-            ->setClass($badge->getClass())
-            ->setType($badge->getType())
+            ->setClass($group->getClass())
+            ->setType($group->getType())
             ->getGroup();
     }
     /**

@@ -74,10 +74,10 @@ class Composer implements ComposerInterface
      */
     public function newGroup()
     {
-    	$badge = $this->groupManager->createGroup();
+    	$group = $this->groupManager->createGroup();
     	//$badge = $this->badgeManager->saveBadge($badge);
     
-    	return new NewBadgeBuilder($badge);
+    	return new NewGroupBuilder($group);
     }
     
 

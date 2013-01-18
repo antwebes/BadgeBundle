@@ -33,4 +33,27 @@ class GroupController extends ContainerAware
 				'data' => $form->getData()
 		));
 	}
+	/**
+	 * Displays a group
+	 *
+	 * @param string $groupId the group id
+	 * @return Response
+	 */
+	public function groupAction($groupId)
+	{
+		$group = $this->getProvider()->getGroup($groupId);
+	
+		return $this->container->get('templating')->renderResponse('AntBadgeBundle:Group:group.html.twig', array(
+				'group' => $group
+		));
+	}
+	/**
+	 * Gets the provider service
+	 *
+	 * @return ProviderInterface
+	 */
+	protected function getProvider()
+	{
+		return $this->container->get('ant_badge.provider');
+	}
 }

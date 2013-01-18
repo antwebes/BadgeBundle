@@ -12,7 +12,14 @@ namespace ant\BadgeBundle\ModelManager;
 
 interface GroupManagerInterface
 {
-
 	function createGroup();
-
+	
+	function findGroupById($id);
+	
+	/**
+	 * Finds a group by its class
+	 *
+	 * @return GroupInterface or null
+	 */
+	public function findGroupByClass($class);
 }

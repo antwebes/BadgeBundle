@@ -2,13 +2,13 @@ ant_badge_shelf:
     pattern: /shelf
     defaults: { _controller: AntBadgeBundle:Badge:shelf }
 ant_badge_view:
-    pattern: /id/{badgeId}
+    pattern: /{badgeId}/view
     defaults: { _controller: AntBadgeBundle:Badge:badge }
 ant_badge_new:
     pattern: /new
     defaults: { _controller: AntBadgeBundle:Badge:newBadge }
 ant_badge_delete:
-    pattern: /{badgeId}
+    pattern: /{badgeId}/delete
     defaults: { _controller: AntBadgeBundle:Badge:delete }
     requirements:
         _method: DELETE
@@ -19,3 +19,6 @@ ant_badge_edit:
 ant_group_new:
     pattern: /new/group
     defaults: { _controller: AntBadgeBundle:Group:newGroup }
+ant_group_view:
+    pattern: /group/{groupId}
+    defaults: { _controller: AntBadgeBundle:Group:group }

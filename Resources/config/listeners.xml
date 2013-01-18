@@ -7,7 +7,9 @@
     <services>
         <service id="ant_badge.publish.listener" class="ant\BadgeBundle\EventListener\PublishListener">
             <tag name="kernel.event_subscriber" />
+            <argument type="service" id="ant_badge.provider" />
             <argument type="service" id="ant_badge.badge_manager" />            
+            <argument type="service" id="ant_badge.group_manager" />                        
         </service>
     </services>
 

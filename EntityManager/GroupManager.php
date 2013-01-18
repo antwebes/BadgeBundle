@@ -10,16 +10,14 @@
 
 namespace ant\BadgeBundle\EntityManager;
 
-use ant\BadgeBundle\Model\GroupInterface;
 
 use ant\BadgeBundle\ModelManager\GroupManager as BaseGroupManager;
-
+use ant\BadgeBundle\Model\GroupInterface;
 use Doctrine\ORM\EntityManager;
-use antwebes\BadgeBundle\Model\BadgeInterface;
 use Doctrine\ORM\Query\Builder;
 
 /**
-* Default ORM BadgeGroupManager.
+* Default ORM GroupManager.
 *
 * @author Pablo <pablo@antweb.es>
 */
@@ -72,9 +70,33 @@ class GroupManager extends BaseGroupManager
     	$this->em->persist($group);
     	$this->em->flush();
     }
-	
-    protected function createMessageMetadata()
+    /**
+     * Finds a group by its ID
+     *
+     * @return GroupInterface or null
+     */
+    public function findGroupById($id)
     {
-        return new $this->metaClass();
+    	return $this->repository->find($id);
+    }
+    /**
+     * Finds a group by its class
+     *
+     * @return GroupInterface or null
+     */
+    public function findGroupByClass($class)
+    {
+    	return $this->repository->findOneByClass($class);
+    	//recuperamos un solo objeto grupo
+    }
+    
+	/**
+     * Returns the fully qualified badge class name
+     *
+     * @return string
+     */
+    public function getClass()
+    {
+    	return $this->class;
     }
 }

@@ -87,6 +87,16 @@ class BadgeManager extends BaseBadgeManager
     	->execute();
     }
     /**
+     * Finds a badge by its group
+     *
+     * @return BadgeInterface or null
+     */
+    public function findBadgesByGroup($group)
+    {
+    	//ldd($this->repository->find($id));
+    	return $this->repository->findByBadgeGroup($group);
+    }
+    /**
      * Deletes a badge
      *
      * @param BadgeInterface $badge the badge to delete
@@ -95,15 +105,6 @@ class BadgeManager extends BaseBadgeManager
     {
     	$this->em->remove($badge);
     	$this->em->flush();
-    }
-    /**
-     * Finds a badge by its class
-     *
-     * @return BadgeInterface or null
-     */
-    public function findBadgeByClass($class)
-    {
-    	return $this->repository->findByClass($class);
     }
     
     /**

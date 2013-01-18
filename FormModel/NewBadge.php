@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\FormModel;
 
+use ant\BadgeBundle\Model\GroupInterface;
+
 class NewBadge extends AbstractBadge
 {
 	//Aquí habria que declarar los campos propios del badge,
@@ -27,7 +29,12 @@ class NewBadge extends AbstractBadge
 	 * @var int
 	 */
 	protected $count;
-	
+	/**
+	 * The group
+	 *
+	 * @var string
+	 */
+	protected $badgeGroup;
 	
 	/**
 	 * @return string
@@ -82,6 +89,20 @@ class NewBadge extends AbstractBadge
 	{
 		$this->count = $count;
 	}
-	
+	/**
+	 * @return string
+	 */
+	public function getBadgeGroup()
+	{
+		return $this->badgeGroup;
+	}
+	/**
+	 * @param  string
+	 * @return null
+	 */
+	public function setBadgeGroup(GroupInterface $group)
+	{
+		$this->badgeGroup = $group;
+	}
 	
 }

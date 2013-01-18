@@ -30,11 +30,11 @@ abstract class Badge implements BadgeInterface {
 	protected $count;
 	
 	/**
-	 * Badges contained in this badge
+	 * Group belong
 	 *
-	 * @var Collection of BadgeInterface
+	 * @var GroupInterface
 	 */
-	protected $badges;
+	protected $badgeGroup;
 	
 
 /*	public function __construct($name) {
@@ -73,21 +73,6 @@ abstract class Badge implements BadgeInterface {
 		$this->image = $image;
 	}
 	
-	/**
-	 * @see ant\BadgeBundle\Model\BadgeInterface::adBadge()
-	 */
-	public function addBadge(BadgeInterface $badge)
-	{
-		$this->badges->add($badge);
-	}
-	
-	/**
-	 * @see ant\BadgeBundle\Model\BadgeInterface::getBadges()
-	 */
-	public function getBadges()
-	{
-		return $this->badges->toArray();
-	}
 	public function getCount() {
 		return $this->cound;
 	}
@@ -95,5 +80,11 @@ abstract class Badge implements BadgeInterface {
 	public function setCount($count) {
 		$this->count = $count;
 	}
+	public function getBadgeGroup() {
+		return $this->badgeGroup;
+	}
 	
+	public function setBadgeGroup(GroupInterface $group) {
+		$this->badgeGroup = $group;
+	}
 }

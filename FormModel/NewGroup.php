@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\FormModel;
 
+
+
 class NewGroup extends AbstractBadge
 {
 	//Aquí habria que declarar los campos propios del badge,
@@ -19,6 +21,7 @@ class NewGroup extends AbstractBadge
 	 * @var string
 	 */
 	protected $type;
+	
 	
 	/**
 	 * @return string
@@ -50,4 +53,5 @@ class NewGroup extends AbstractBadge
 	{
 		$this->type = $type;
 	}
+	
 }

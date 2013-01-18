@@ -21,12 +21,13 @@ class NewBadgeFormHandler extends AbstractBadgeFormHandler
         if (!$badge instanceof NewBadge) {
             throw new \InvalidArgumentException(sprintf('Badge must be a NewBadge instance, "%s" given', get_class($message)));
         }
-
+        
         return $this->composer->newBadge()
             ->setDescription($badge->getDescription())
             ->setName($badge->getName())
             ->setImage($badge->getImage())
             ->setCount($badge->getCount())
+            ->setBadgeGroup($badge->getBadgeGroup())
             ->getBadge();
     }
     

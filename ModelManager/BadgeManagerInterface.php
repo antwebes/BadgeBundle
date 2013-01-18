@@ -32,10 +32,11 @@ interface BadgeManagerInterface
      *
      */
     public function findAllBadge();
-
     /**
-     * 
-     * @param string $class
+     * Finds a badge by its group
+     *
+     * @return BadgeInterface or null
      */
-    public function findBadgeByClass($class);
+    public function findBadgesByGroup($group);
+    
 }

@@ -12,14 +12,14 @@ namespace ant\BadgeBundle\ModelManager;
 
 use ant\BadgeBundle\Model\GroupInterface;
 
-class GroupManager implements GroupManagerInterface
+abstract class GroupManager implements GroupManagerInterface
 {
  
     public function createGroup()
     {
         $class = $this->getClass();
-        $badge = new $class;
+        $group = new $class;
 
-        return $badge;
+        return $group;
     }
 }
