@@ -18,7 +18,7 @@ http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
         <field name="count" column="count" type="text" />
         <field name="acquired" column="acquired" type="boolean" />
-        <field name="wonAt" column="wonAt" type="datetime" />
+        <field name="wonAt" column="wonAt" type="datetime" nullable="true" />
         
     </mapped-superclass>
 

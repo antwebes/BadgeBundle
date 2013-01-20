@@ -27,8 +27,9 @@ class BadgeEvent extends Event
 
         //$this->badge = $badge;
     	$this->em = $em;
-        $this->class = $em->getClassMetadata($class)->name; //para recuperar la clase
-       // ldd($class);
+        //$this->class = $em->getClassMetadata($class)->name; //para recuperar la clase
+       $this->class=$class;
+        //ldd($class);
     }
 
    /**

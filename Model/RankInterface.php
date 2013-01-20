@@ -11,6 +11,7 @@ namespace ant\BadgeBundle\Model;
 
 use ant\BadgeBundle\Model\ParticipantInterface;
 
+
 interface RankInterface
 {
 	/**

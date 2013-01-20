@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\Provider;
 
+use ant\BadgeBundle\Composer\ComposerInterface;
+
 use ant\BadgeBundle\Security\ParticipantProviderInterface;
 
 use ant\BadgeBundle\ModelManager\RankManagerInterface;
@@ -43,13 +45,15 @@ class Provider implements ProviderInterface
 	 * @var ParticipantProviderInterface
 	 */
 	protected $participantProvider;
+	protected $composer;
 	
-	public function __construct(BadgeManagerInterface $badgeManager, GroupManagerInterface $groupManager, RankManagerInterface $rankManager, ParticipantProviderInterface $participantProvider)
+	public function __construct(BadgeManagerInterface $badgeManager, GroupManagerInterface $groupManager, RankManagerInterface $rankManager, ParticipantProviderInterface $participantProvider, ComposerInterface $composer)
 	{
 		$this->badgeManager = $badgeManager;
 		$this->groupManager = $groupManager;
 		$this->rankManager = $rankManager;
 		$this->participantProvider = $participantProvider;
+		$this->composer = $composer;
 	}
 	
 	/**
@@ -106,8 +110,15 @@ class Provider implements ProviderInterface
 		$participant = $this->participantProvider->getAuthenticatedParticipant(); // obtain the user logueado
 		foreach ($badges as $badge)
 		{
+			//hay que mirar aer que tenemos que llamar para que cree el rank
+			//Ahora la funcion está en el composer
 			$rank= $this->rankManager->findRankOfBadge($badge, $participant);
-			if ( $rank != null ) ldd($rank[0]->getParticipant());
+			if ($rank == null) {
+				$this->composer->createRank($participant, $badge);
+				$rank= $this->rankManager->findRankOfBadge($badge, $participant);
+				ldd($rank);
+			}
+			if ( $rank->getAcquired() == true ) ldd($rank[0]->getParticipant());
 			//if ( $rank->getAcquired() != true )//That badge was already achieved
 				// return $rank;
 		}

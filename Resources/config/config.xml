@@ -9,7 +9,8 @@
             <argument type="service" id="ant_badge.badge_manager" />
             <argument type="service" id="ant_badge.group_manager" />
             <argument type="service" id="ant_badge.rank_manager" />
-             <argument type="service" id="ant_badge.participant_provider" />
+            <argument type="service" id="ant_badge.participant_provider" />
+            <argument type="service" id="ant_badge.composer" />            
         </service>
         <service id="ant_badge.composer" class="ant\BadgeBundle\Composer\Composer" public="true">
             <argument type="service" id="ant_badge.badge_manager" />

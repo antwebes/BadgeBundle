@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\Composer;
 
+use ant\BadgeBundle\Model\ParticipantInterface;
+
 use ant\BadgeBundle\Model\BadgeInterface;
 use ant\BadgeBundle\ModelManager\BadgeManagerInterface;
 use ant\BadgeBundle\ModelManager\RankManagerInterface;
@@ -79,6 +81,18 @@ class Composer implements ComposerInterface
     
     	return new NewGroupBuilder($group);
     }
-    
+    /**
+     * Starts composing a rank and complete its fields
+     *
+     * @return RankInterface
+     */
+    public function createRank(ParticipantInterface $participant, BadgeInterface $badge)
+    {
+    	$rank = $this->newRank()
+	    	->setParticipant($participant)
+	    	->setBadge($badge)
+	    	->getRank();
+    	$this->rankManager->saveRank($rank);
+    }
 
 }

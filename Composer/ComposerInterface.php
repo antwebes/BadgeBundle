@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\Composer;
 
+use ant\BadgeBundle\Model\ParticipantInterface;
+
 use ant\BadgeBundle\Model\BadgeInterface;
 
 /**
@@ -23,5 +25,7 @@ interface ComposerInterface
      * @return NewRankBuilder
      */
     public function newRank();
+    
+    public function createRank(ParticipantInterface $participant, BadgeInterface $badge);
 
 }

@@ -28,7 +28,7 @@ interface BadgeInterface
 	
 	public function setImage($image);
 	
-	public function getBAdgeGroup();
+	public function getBadgeGroup();
 	
 	public function setBadgeGroup(GroupInterface $group);
 	

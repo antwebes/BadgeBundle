@@ -13,7 +13,7 @@ use ant\BadgeBundle\Model\ParticipantInterface;
 
 abstract class Rank implements RankInterface {
 	
-	protected $count;
+	protected $count=0;
 	
 	/**
 	 * Participant that created the badge
@@ -77,7 +77,7 @@ abstract class Rank implements RankInterface {
 	 */
 	public function setAcquired($acquired)
 	{
-		$this->$acquired = $acquired;
+		$this->acquired = $acquired;
 	}
 	/**
 	 * @see ant\BadgeBundle\Model\RankInterface::getBadge()
@@ -92,7 +92,7 @@ abstract class Rank implements RankInterface {
 	 */
 	public function setBadge(BadgeInterface $badge)
 	{
-		$this->$badge = $badge;
+		$this->badge = $badge;
 	}
 	/**
 	 * @see FOS\MessageBundle\Model\ThreadInterface::getWonAt()
