@@ -26,7 +26,8 @@ class Configuration implements ConfigurationInterface
         		->scalarNode('badge_class')->isRequired()->cannotBeEmpty()->end()
         		->scalarNode('rank_class')->isRequired()->cannotBeEmpty()->end()
         		->scalarNode('group_class')->isRequired()->cannotBeEmpty()->end()
-
+        		->scalarNode('participant_provider')->defaultValue('fos_message.participant_provider.default')->cannotBeEmpty()->end()
+        		
         		->arrayNode('new_badge_form')
 	        		->addDefaultsIfNotSet()
 	        		->children()

@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\Provider;
 
+use ant\BadgeBundle\Security\ParticipantProviderInterface;
+
 use ant\BadgeBundle\ModelManager\RankManagerInterface;
 
 use ant\BadgeBundle\Event\BadgeEvent;
@@ -35,12 +37,19 @@ class Provider implements ProviderInterface
 	 * @var RankManagerInterface
 	 */
 	protected $rankManager;
+	/**
+	 * The participant provider instance
+	 *
+	 * @var ParticipantProviderInterface
+	 */
+	protected $participantProvider;
 	
-	public function __construct(BadgeManagerInterface $badgeManager, GroupManagerInterface $groupManager, RankManagerInterface $rankManager)
+	public function __construct(BadgeManagerInterface $badgeManager, GroupManagerInterface $groupManager, RankManagerInterface $rankManager, ParticipantProviderInterface $participantProvider)
 	{
 		$this->badgeManager = $badgeManager;
 		$this->groupManager = $groupManager;
 		$this->rankManager = $rankManager;
+		$this->participantProvider = $participantProvider;
 	}
 	
 	/**
@@ -94,12 +103,15 @@ class Provider implements ProviderInterface
 	{
 		$group = $this->getGroupByClass($event->getClass());
 		$badges = $this->getBadgesByGroup($group);
+		$participant = $this->participantProvider->getAuthenticatedParticipant(); // obtain the user logueado
 		foreach ($badges as $badge)
 		{
-			$rank= $this->rankManager->findRankOfBadge($badge);
-			if ( $rank->getAcquired() != true )//That badge was already achieved
-				 return $rank;
+			$rank= $this->rankManager->findRankOfBadge($badge, $participant);
+			if ( $rank != null ) ldd($rank[0]->getParticipant());
+			//if ( $rank->getAcquired() != true )//That badge was already achieved
+				// return $rank;
 		}
+		ldd($badges, $group);
 		return $badges;
 	}
 }

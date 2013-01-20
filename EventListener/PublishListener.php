@@ -39,7 +39,7 @@ class PublishListener implements EventSubscriberInterface
     	//$class= $event->getClass();
     	//$group = $this->groupManager->findGroupByClass($class); //to obtain the groups for this class
     	//$badges = $this->badgeManager->findBadgesByGroup($group);
-    	ldd($rookie);
+    	//ldd($rookie);
     	
     }
 

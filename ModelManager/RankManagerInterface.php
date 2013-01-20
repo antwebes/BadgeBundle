@@ -10,6 +10,8 @@
 
 namespace ant\BadgeBundle\ModelManager;
 
+use ant\BadgeBundle\Model\ParticipantInterface;
+
 use ant\BadgeBundle\Model\BadgeInterface;
 
 interface RankManagerInterface
@@ -18,7 +20,7 @@ interface RankManagerInterface
 	//public function createBadgeParticipant();
 	public function createRank();
 	
-	public function findRankOfBadge(BadgeInterface $badge);
+	public function findRankOfBadge(BadgeInterface $badge, ParticipantInterface $participant);
 	
 	
 }

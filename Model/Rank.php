@@ -54,7 +54,7 @@ abstract class Rank implements RankInterface {
 	 */
 	public function getParticipant()
 	{
-		return $this->createdBy;
+		return $this->participant;
 	}
 	
 	/**

@@ -9,6 +9,7 @@
             <argument type="service" id="ant_badge.badge_manager" />
             <argument type="service" id="ant_badge.group_manager" />
             <argument type="service" id="ant_badge.rank_manager" />
+             <argument type="service" id="ant_badge.participant_provider" />
         </service>
         <service id="ant_badge.composer" class="ant\BadgeBundle\Composer\Composer" public="true">
             <argument type="service" id="ant_badge.badge_manager" />
@@ -19,6 +20,9 @@
             <argument type="service" id="ant_badge.authorizer" />
             <argument type="service" id="ant_badge.participant_provider" />
             <argument type="service" id="event_dispatcher" />
+        </service>
+        <service id="ant_badge.participant_provider" class="ant\BadgeBundle\Security\ParticipantProvider" public="false">
+            <argument type="service" id="security.context" />
         </service>
     </services>
 
