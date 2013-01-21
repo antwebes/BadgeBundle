@@ -1,0 +1,13 @@
+{% extends 'AntBadgeBundle::layout.html.twig' %}
+
+{% block ant_badge_content %}
+
+<h2>{% trans from 'BadgeBundle' %}edit_group{% endtrans %}</h2>
+
+<form action="{{ path('ant_group_edit', {'id':group.id}) }}" method="post">
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+
+{% endblock %}

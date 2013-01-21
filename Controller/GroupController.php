@@ -34,6 +34,45 @@ class GroupController extends ContainerAware
 		));
 	}
 	/**
+	 * Deletes a group
+	 *
+	 * @return Response
+	 */
+	public function deleteAction($groupId)
+	{
+		$group = $this->getProvider()->getGroup($groupId);
+		$this->container->get('ant_badge.group_manager')->deleteGroup($group);
+	
+		//	return new RedirectResponse($this->container->get('router')->generate('ant_badge_shelf'));//me redirige a la estanteria de insignias
+	}
+	/**
+	 * Edit a group
+	 *
+	 * @return Response
+	 */
+	public function editAction($id, Request $request)
+	{
+		$group = $this->getProvider()->getGroup($id);
+		$form = $this->container->get('ant_badge.group_form.factory')->createForm();
+	
+		$form->setData($group);
+	
+		if ('POST' === $request->getMethod()) {
+			$form->bind($request);
+	
+			if ($form->isValid()) {
+				$this->container->get('ant_badge.group_manager')->saveGroup($group);
+				return new RedirectResponse($this->container->get('router')->generate('ant_group_shelf'));
+			}
+		}
+	
+		return $this->container->get('templating')->renderResponse('AntBadgeBundle:Group:edit.html.twig', array(
+				'form' => $form->createView(),
+				//'data' => $form->getData(),
+				'group' => $group
+		));
+	}
+	/**
 	 * Displays a group
 	 *
 	 * @param string $groupId the group id

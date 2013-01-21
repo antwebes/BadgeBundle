@@ -100,7 +100,16 @@ class GroupManager extends BaseGroupManager
     	->getQuery()
     	->execute();
     }
-    
+    /**
+     * Deletes a group
+     *
+     * @param GroupInterface $group the group to delete
+     */
+    public function deleteGroup(GroupInterface $group)
+    {
+    	$this->em->remove($group);
+    	$this->em->flush();
+    }
 	/**
      * Returns the fully qualified badge class name
      *

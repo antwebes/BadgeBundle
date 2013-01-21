@@ -19,6 +19,15 @@ ant_badge_edit:
 ant_group_new:
     pattern: /new/group
     defaults: { _controller: AntBadgeBundle:Group:newGroup }
+ant_group_delete:
+    pattern: /group/{groupId}/delete
+    defaults: { _controller: AntBadgeBundle:Group:delete }
+    requirements:
+        _method: DELETE
+        id: "\d+"
+ant_group_edit:
+    pattern: /group/{id}/edit
+    defaults: { _controller: AntBadgeBundle:Group:edit }
 ant_group_view:
     pattern: /group/{groupId}/view
     defaults: { _controller: AntBadgeBundle:Group:group }
