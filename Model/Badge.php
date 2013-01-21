@@ -74,7 +74,7 @@ abstract class Badge implements BadgeInterface {
 	}
 	
 	public function getCount() {
-		return $this->cound;
+		return $this->count;
 	}
 	
 	public function setCount($count) {

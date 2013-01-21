@@ -86,13 +86,13 @@ class RankManager extends BaseRankManager
     public function findRankOfBadge(BadgeInterface $badge, ParticipantInterface $participant)
     {
     	return $this->repository->createQueryBuilder('r')
-    	->where('r.badge = :badge' )
-    	->andwhere('r.participant = :participant')
-    	->setParameter('badge', $badge)
-    	->setParameter('participant', $participant)
-    	
-    	->getQuery()
-    	->execute();
+	    	->where('r.badge = :badge' )
+	    	->andwhere('r.participant = :participant')
+	    	->setParameter('badge', $badge)
+	    	->setParameter('participant', $participant)	    	
+	    	->getQuery()
+	    	->getOneOrNullResult();
+	    	//->execute();
     }
     
     /**

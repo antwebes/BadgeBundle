@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\Composer;
 
+use ant\BadgeBundle\Model\RankInterface;
+
 use ant\BadgeBundle\Model\ParticipantInterface;
 
 use ant\BadgeBundle\Model\BadgeInterface;
@@ -86,13 +88,32 @@ class Composer implements ComposerInterface
      *
      * @return RankInterface
      */
-    public function createRank(ParticipantInterface $participant, BadgeInterface $badge)
+    public function createRank(ParticipantInterface $participant, BadgeInterface $badge, $count=1)
     {
     	$rank = $this->newRank()
 	    	->setParticipant($participant)
 	    	->setBadge($badge)
+	    	->setcount($count)
 	    	->getRank();
     	$this->rankManager->saveRank($rank);
     }
+    /**
+     * Add one to the counter
+     *
+     * @return RankInterface
+     */
+    public function addCountToRank(RankInterface $rank)
+    {
+    	$rank->setCount($rank->getCount()+1);
+    	$count = $rank->getCount();
+    	$badge = $rank->getBadge();
+    	if ($badge->getCount() == $count){
+    		$rank->setAcquired(true);
+    		$rank->setWonAt(new \DateTime('now'));
+    	}
+    	
+    	return $rank;
+    }
+    
 
 }

@@ -108,21 +108,31 @@ class Provider implements ProviderInterface
 		$group = $this->getGroupByClass($event->getClass());
 		$badges = $this->getBadgesByGroup($group);
 		$participant = $this->participantProvider->getAuthenticatedParticipant(); // obtain the user logueado
+		
+		$totalBadges = sizeof($badges);
+		$i = 1;
+		$count = 0;
 		foreach ($badges as $badge)
 		{
-			//hay que mirar aer que tenemos que llamar para que cree el rank
-			//Ahora la funcion está en el composer
-			$rank= $this->rankManager->findRankOfBadge($badge, $participant);
+			$rank = $this->rankManager->findRankOfBadge($badge, $participant);
 			if ($rank == null) {
-				$this->composer->createRank($participant, $badge);
-				$rank= $this->rankManager->findRankOfBadge($badge, $participant);
-				ldd($rank);
+				$this->composer->createRank($participant, $badge, $count+1);
+				return ;
 			}
-			if ( $rank->getAcquired() == true ) ldd($rank[0]->getParticipant());
-			//if ( $rank->getAcquired() != true )//That badge was already achieved
-				// return $rank;
-		}
-		ldd($badges, $group);
+			if ( $rank->getAcquired() == false ) {
+				$this->composer->addCountToRank($rank);//Habria que sumar el count
+				$this->rankManager->saveRank($rank);
+				return;
+			}
+			if ($totalBadges == $i) {
+				$this->composer->addCountToRank($rank);//Habria que sumar el count
+				$this->rankManager->saveRank($rank);
+				return;
+			}
+			$count = $rank->getCount();
+			$i++;
+		}		
+		ldd($totalBadges, $i);
 		return $badges;
 	}
 }

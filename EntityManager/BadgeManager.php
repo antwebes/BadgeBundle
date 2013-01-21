@@ -94,7 +94,12 @@ class BadgeManager extends BaseBadgeManager
     public function findBadgesByGroup($group)
     {
     	//ldd($this->repository->find($id));
-    	return $this->repository->findByBadgeGroup($group);
+    	return $this->repository->createQueryBuilder('b')
+	    	->where('b.badgeGroup = :group' )
+	    	->setParameter('group', $group)
+	    	->orderBy('b.count')
+	    	->getQuery()
+	    	->execute();
     }
     /**
      * Deletes a badge
