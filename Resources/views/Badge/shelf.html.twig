@@ -4,8 +4,9 @@
 
 	{% for badge in badges %}	
 	<div class="pin" id="pin{{ badge.id }}">	
-		{{ badge.id }}
-		{{ badge.description }}
+		ID: {{ badge.id }}
+		Description:{{ badge.description }}
+		Group: {{ badge.badgeGroup }}
 		<div class="btn"><a class="elim" data-id="{{ badge.id }}">Eliminar</a></div>
 	</div>
 			

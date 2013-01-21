@@ -48,6 +48,20 @@ class GroupController extends ContainerAware
 		));
 	}
 	/**
+	 * Displays all group
+	 *
+	 * @return Response
+	 */
+	public function shelfAction()
+	{
+		$groups = $this->getProvider()->getShelfGroup();
+		if ($groups) return $this->container->get('templating')
+		->renderResponse('AntBadgeBundle:Group:shelf.html.twig', array(
+				'groups' => $groups
+		));
+		else throw new NotFoundHttpException(sprintf("No GRoups: '%s' found in shelf", $badges));
+	}
+	/**
 	 * Gets the provider service
 	 *
 	 * @return ProviderInterface

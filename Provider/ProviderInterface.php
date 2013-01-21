@@ -21,4 +21,6 @@ interface ProviderInterface
 	 * @return badges
 	 */
 	public function getShelf();
+	
+	public function RanksOfParticipant($acquired);
 }

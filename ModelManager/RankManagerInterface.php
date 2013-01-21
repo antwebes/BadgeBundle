@@ -24,6 +24,10 @@ interface RankManagerInterface
 	
 	public function findRankOfBadge(BadgeInterface $badge, ParticipantInterface $participant);
 	
+	public function findRanksOfParticipantAcquired(ParticipantInterface $participant);
+	
+	public function findRanksOfParticipant(ParticipantInterface $participant);
+	
 	public function saveRank(RankInterface $rank);
 	
 }

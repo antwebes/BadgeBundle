@@ -1,0 +1,20 @@
+{% extends 'AntBadgeBundle::layout.html.twig' %}
+
+{% block ant_badge_content %}
+
+	{% for group in groups %}	
+		
+		{{ group.name }}		
+		<ul>
+		{% for badge in group.badges %}
+			<li>{{ badge.description }}
+			{{ badge.name }}</li>			
+		{% endfor %}
+		</ul>
+		<hr>
+	{% else %}
+		No se han recuperado badges
+	{% endfor %}
+	
+
+{% endblock %}

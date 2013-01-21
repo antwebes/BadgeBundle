@@ -1,0 +1,16 @@
+{% extends 'AntBadgeBundle::layout.html.twig' %}
+
+{% block ant_badge_content %}
+
+	{% for rank in ranks %}	
+		{{ rank.badge }}
+		{{ rank.count }} of {{ rank.badge.count }}
+		<img src="{{ rank.badge.image }}"/>
+	</div>	
+		<hr>
+	{% else %}
+		No se han recuperado ranks
+	{% endfor %}
+	
+
+{% endblock %}

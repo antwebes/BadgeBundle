@@ -20,5 +20,11 @@ ant_group_new:
     pattern: /new/group
     defaults: { _controller: AntBadgeBundle:Group:newGroup }
 ant_group_view:
-    pattern: /group/{groupId}
+    pattern: /group/{groupId}/view
     defaults: { _controller: AntBadgeBundle:Group:group }
+ant_group_shelf:
+    pattern: /group/shelf
+    defaults: { _controller: AntBadgeBundle:Group:shelf }
+ant_rank_shelf:
+    pattern: /rank/shelf/{acquired}
+    defaults: { _controller: AntBadgeBundle:Rank:shelf }

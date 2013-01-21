@@ -16,6 +16,7 @@
             <argument type="service" id="ant_badge.badge_manager" />
             <argument type="service" id="ant_badge.rank_manager" />
             <argument type="service" id="ant_badge.group_manager" />
+            <argument type="service" id="event_dispatcher" />
         </service>
         <service id="ant_badge.deleter.default" class="ant\BadgeBundle\Deleter\Deleter" public="false">
             <argument type="service" id="ant_badge.authorizer" />

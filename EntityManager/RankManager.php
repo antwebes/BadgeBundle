@@ -66,14 +66,28 @@ class RankManager extends BaseRankManager
      * @param ParticipantInterface $participant
      * @return array of RankInterface
      */
-    public function findBadgesOfParticipant(ParticipantInterface $participant)
+    public function findRanksOfParticipant(ParticipantInterface $participant)
     {
-    	return $this->repository->createQueryBuilder('b')
-    	->innerJoin('b.participant', 'p')
-    
-    	->where('p.id = :participant_id')
+    	return $this->repository->createQueryBuilder('r')
+    	->where('r.participant = :participant_id')
+    	->setParameter('participant_id', $participant->getId())    
+    	->getQuery()
+    	->execute();
+    }
+    /**
+     * Gets Rank of a participant ACQUIRED
+     * ie the badges that the user is trying to get
+     *
+     * @param ParticipantInterface $participant
+     * @return array of RankInterface
+     */
+    public function findRanksOfParticipantAcquired(ParticipantInterface $participant)
+    {
+    	
+    	return $this->repository->createQueryBuilder('r')
+    	->where('r.participant = :participant_id')
+    	->andwhere('r.acquired = true')
     	->setParameter('participant_id', $participant->getId())
-    
     	->getQuery()
     	->execute();
     }

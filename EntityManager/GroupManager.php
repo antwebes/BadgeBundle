@@ -89,6 +89,17 @@ class GroupManager extends BaseGroupManager
     	return $this->repository->findOneByClass($class);
     	//recuperamos un solo objeto grupo
     }
+    /**
+     * Finds all groups
+     *
+     * @return GroupInterface or null
+     */
+    public function findAllGroup()
+    {
+    	return $this->repository->createQueryBuilder('g')
+    	->getQuery()
+    	->execute();
+    }
     
 	/**
      * Returns the fully qualified badge class name

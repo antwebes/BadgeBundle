@@ -27,6 +27,20 @@ class RankController extends ContainerAware
 		));
 	}
 	/**
+	 * Displays all ranks
+	 *
+	 * @return Response
+	 */
+	public function shelfAction($acquired)
+	{
+		$ranks = $this->getProvider()->RanksOfParticipant($acquired);
+		if ($ranks) return $this->container->get('templating')
+		->renderResponse('AntBadgeBundle:Rank:shelf.html.twig', array(
+				'ranks' => $ranks
+		));
+		else throw new NotFoundHttpException(sprintf("No ranks: '%s' found in shelf", $ranks));
+	}
+	/**
 	 * Gets the provider service
 	 *
 	 * @return ProviderInterface

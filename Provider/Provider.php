@@ -86,6 +86,15 @@ class Provider implements ProviderInterface
 		return $this->badgeManager->findAllBadge();
 	}
 	/**
+	 * Gets shelf ( all groups available)
+	 *
+	 * @return array of GroupsInterface
+	 */
+	public function getShelfGroup()
+	{
+		return $this->groupManager->findAllGroup();
+	}
+	/**
 	 * Gets the group of a class (only one)
 	 */
 	public function getGroupByClass($class)
@@ -99,6 +108,16 @@ class Provider implements ProviderInterface
 	public function getBadgesByGroup(GroupInterface $group)
 	{
 		return $this->badgeManager->findBadgesByGroup($group);
+	}
+	/**
+	 * Gets ranks of a participant acquires or no
+	 * @return array RankInterface
+	 */
+	public function RanksOfParticipant($acquired)
+	{		
+		$participant = $this->participantProvider->getAuthenticatedParticipant(); // obtain the user logueado
+		if ($acquired == true) return $this->rankManager->findRanksOfParticipantAcquired($participant);
+		else return $this->rankManager->findRanksOfParticipant($participant);
 	}
 	/**
 	 * Action for create a first ranking of a user
@@ -119,20 +138,12 @@ class Provider implements ProviderInterface
 				$this->composer->createRank($participant, $badge, $count+1);
 				return ;
 			}
-			if ( $rank->getAcquired() == false ) {
+			if ( $rank->getAcquired() == false || $totalBadges == $i) {
 				$this->composer->addCountToRank($rank);//Habria que sumar el count
-				$this->rankManager->saveRank($rank);
-				return;
-			}
-			if ($totalBadges == $i) {
-				$this->composer->addCountToRank($rank);//Habria que sumar el count
-				$this->rankManager->saveRank($rank);
 				return;
 			}
 			$count = $rank->getCount();
 			$i++;
-		}		
-		ldd($totalBadges, $i);
-		return $badges;
+		}
 	}
 }
