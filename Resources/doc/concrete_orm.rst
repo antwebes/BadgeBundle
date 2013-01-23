@@ -27,6 +27,11 @@ Badge class
 	     * @ORM\GeneratedValue(strategy="AUTO")
 	     */
 	    protected $id;
+	     /**
+	     * @ORM\ManyToOne(targetEntity="Group", inversedBy="badges")
+	     * @ORM\JoinColumn(name="badge_group", referencedColumnName="id")
+	     */
+	    protected $badgeGroup;
 	
 	}
 	
@@ -58,7 +63,10 @@ Rank class
 	     * @ORM\ManyToOne(targetEntity="Acme\UserBundle\Entity\User")
 	     */
 	    protected $participant;
-	    
+	    /**
+		 * @ORM\ManyToOne(targetEntity="sdfs\sdfsBundle\Entity\Badge")
+		 */
+		protected $badge;
 	    public function setParticipant(ParticipantInterface $participant) {
     	$this->participant = $participant;
     	return $this;

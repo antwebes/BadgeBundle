@@ -132,3 +132,28 @@ Create a new rank, from a controller::
 	    	->getRank();    	
     	
     	$this->get('ant_badge.rank_manager')->saveRank($rank);
+
+Create a event
+--------------
+In your controller, you can create a badge event.
+
+::
+
+....
+	use ant\BadgeBundle\Event\BadgeEvent;
+	use ant\BadgeBundle\Event\AntBadgeEvents;
+	
+	class AcmeController extends Controller
+	{
+		public function publishAction(){
+			...
+			$dispatcher = $this->container->get('event_dispatcher');
+			$event = new BadgeEvent($em, 'acem\AcmeBundle\Entity\AcmeEntity');
+			$dispatcher->dispatch(AntBadgeEvents::POST_PUBLISH, $event);
+		}
+	}
+
+Advanced Functions
+===========
+
+.. _Advanced functions ( listeners.. ): advanced_functions.rst

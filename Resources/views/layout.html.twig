@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}" />
         <title>{% trans from 'AntBadgeBundle' %}badge{% endtrans %}</title>
-        {% stylesheets '@BadgeBundle/Resources/public/css/bootstrapc.css' %}
+        {% stylesheets '@AntBadgeBundle/Resources/public/css/bootstrapc.css' %}
             <link rel="stylesheet"  href="{{ asset_url }}" >
           {% endstylesheets %}
     </head>
@@ -18,11 +18,11 @@
 
         {% block body_js %}
           {% block body_js_jquery %}<script src="{% block body_js_jquery_onlineSrc %}//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js{% endblock %}"></script>
-            <script>window.jQuery || document.write('<script src="{% block body_js_jquery_offlineSrc %}{% javascripts '@ChatBundle/Resources/public/js/vendor/jquery-1.8.1.min.js' %}{{ asset_url }}{% endjavascripts %}{% endblock %}"><\/script>')</script>
+            <script>window.jQuery || document.write('<script src="{% block body_js_jquery_offlineSrc %}{% javascripts '@AntBadgeBundle/Resources/public/js/vendor/jquery-1.8.1.min.js' %}{{ asset_url }}{% endjavascripts %}{% endblock %}"><\/script>')</script>
           {% endblock body_js_jquery %}
           
           {% block body_js_final %}
-          	{% javascripts '@BadgeBundle/Resources/public/js/vendor/bootstrap.min.js' %}
+          	{% javascripts '@AntBadgeBundle/Resources/public/js/vendor/bootstrap.min.js' %}
             	<script src="{{ asset_url }}"></script>
           	{% endjavascripts %}
           {% endblock %}

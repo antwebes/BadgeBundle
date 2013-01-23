@@ -116,7 +116,7 @@ class Provider implements ProviderInterface
 	public function RanksOfParticipant($acquired)
 	{		
 		$participant = $this->participantProvider->getAuthenticatedParticipant(); // obtain the user logueado
-		if ($acquired == true) return $this->rankManager->findRanksOfParticipantAcquired($participant);
+		if ($acquired == 'true') return $this->rankManager->findRanksOfParticipantAcquired($participant);
 		else return $this->rankManager->findRanksOfParticipant($participant);
 	}
 	/**
