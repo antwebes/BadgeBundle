@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}" />
         <title>{% trans from 'AntBadgeBundle' %}badge{% endtrans %}</title>
-        {% stylesheets '@ChatBundle/Resources/public/css/bootstrapc.css' %}
+        {% stylesheets '@BadgeBundle/Resources/public/css/bootstrapc.css' %}
             <link rel="stylesheet"  href="{{ asset_url }}" >
           {% endstylesheets %}
     </head>
@@ -22,7 +22,7 @@
           {% endblock body_js_jquery %}
           
           {% block body_js_final %}
-          	{% javascripts '@ChatBundle/Resources/public/js/vendor/bootstrap.min.js' %}
+          	{% javascripts '@BadgeBundle/Resources/public/js/vendor/bootstrap.min.js' %}
             	<script src="{{ asset_url }}"></script>
           	{% endjavascripts %}
           {% endblock %}

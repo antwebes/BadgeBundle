@@ -13,7 +13,9 @@
 
     <services>
 
-		 <service id="ant_badge.new_badge_form.type" class="ant\BadgeBundle\FormType\NewBadgeFormType" public="true" />
+		 <service id="ant_badge.new_badge_form.type" class="ant\BadgeBundle\FormType\NewBadgeFormType" public="true" >
+		 	<argument>%ant_badge.group_class%</argument>
+		 </service>
 		 <service id="ant_badge.new_group_form.type" class="ant\BadgeBundle\FormType\NewGroupFormType" public="true" />
 		 
 		 <service id="ant_badge.badge_form.type" class="ant\BadgeBundle\FormType\BadgeFormType" public="true" >

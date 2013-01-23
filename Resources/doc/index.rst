@@ -66,6 +66,8 @@ Finally, add the following to your routing file:
 	ant_badge:
 	    db_driver: orm
 	    badge_class: Acme\BadgeBundle\Entity\Badge
+	    rank_class: Acme\BadgeBundle\Entity\Rank
+    	group_class: Acme\BadgeBundle\Entity\Group
 
 
 ::

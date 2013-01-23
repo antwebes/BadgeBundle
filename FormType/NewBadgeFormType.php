@@ -13,6 +13,12 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  */
 class NewBadgeFormType extends AbstractType
 {
+	private $groupClass;
+	
+	public function __construct($groupClass)
+	{
+		$this->groupClass = $groupClass;
+	}
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -23,7 +29,7 @@ class NewBadgeFormType extends AbstractType
         	->add('badgeGroup', 'entity', array(
 				'label' =>'Group: ',
 				'empty_value'=> '',
-				'class' => 'chatea\\ChatBundle\\Entity\\Group',
+				'class' => $this->groupClass,
 				'query_builder' => function ($repositorio) {
 				return $repositorio->createQueryBuilder('g')->orderBy('g.name', 'ASC');
 				}, ));

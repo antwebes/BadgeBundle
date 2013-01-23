@@ -16,6 +16,7 @@ ant_badge_delete:
 ant_badge_edit:
     pattern: /{id}/edit
     defaults: { _controller: AntBadgeBundle:Badge:editBadge }
+    #Group
 ant_group_new:
     pattern: /new/group
     defaults: { _controller: AntBadgeBundle:Group:newGroup }
@@ -34,6 +35,7 @@ ant_group_view:
 ant_group_shelf:
     pattern: /group/shelf
     defaults: { _controller: AntBadgeBundle:Group:shelf }
+    #Rank
 ant_rank_shelf:
     pattern: /rank/shelf/{acquired}
     defaults: { _controller: AntBadgeBundle:Rank:shelf }
