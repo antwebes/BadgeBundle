@@ -33,7 +33,7 @@ class RankController extends ContainerAware
 	 */
 	public function shelfAction($acquired)
 	{
-		$ranks = $this->getProvider()->RanksOfParticipant($acquired);
+		$ranks = $this->getProvider()->RanksOfParticipantOnline($acquired);
 		if ($ranks) return $this->container->get('templating')
 		->renderResponse('AntBadgeBundle:Rank:shelf.html.twig', array(
 				'ranks' => $ranks

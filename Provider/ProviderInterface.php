@@ -6,6 +6,8 @@ namespace ant\BadgeBundle\Provider;
  * 
  * @author Pablo <pablo@antweb.es>
  */
+use ant\BadgeBundle\Model\ParticipantInterface;
+
 interface ProviderInterface
 {
 	/**
@@ -22,5 +24,7 @@ interface ProviderInterface
 	 */
 	public function getShelf();
 	
-	public function RanksOfParticipant($acquired);
+	public function RanksOfParticipantOnline($acquired);
+	
+	public function RanksOfParticipant($acquired, ParticipantInterface $participant);
 }

@@ -31,9 +31,9 @@ We can create a listener to the event win a badge.
 	    public function postAcquired(RankEvent $event)
 	    {
 			//All code you want
-	    	//$badge = $event->getRank()->getBadge();
-	    	//$u = $event->getRank()->getParticipant();
-	    		    	
+			//$badge = $event->getRank()->getBadge();
+			//$u = $event->getRank()->getParticipant();
+			//.....	    	
 	    }
 	
 	}

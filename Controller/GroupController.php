@@ -7,12 +7,13 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use ant\BadgeBundle\Provider\ProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 class GroupController extends ContainerAware
 {	
 	/**
 	 * Create a group
-	 *
+	 * @Secure(roles="ROLE_ADMIN")
 	 * @return Response
 	 */
 	public function newGroupAction()
@@ -35,7 +36,7 @@ class GroupController extends ContainerAware
 	}
 	/**
 	 * Deletes a group
-	 *
+	 * @Secure(roles="ROLE_ADMIN")
 	 * @return Response
 	 */
 	public function deleteAction($groupId)
@@ -47,7 +48,7 @@ class GroupController extends ContainerAware
 	}
 	/**
 	 * Edit a group
-	 *
+	 * @Secure(roles="ROLE_ADMIN")
 	 * @return Response
 	 */
 	public function editAction($id, Request $request)

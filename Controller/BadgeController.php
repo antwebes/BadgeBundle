@@ -7,12 +7,13 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use ant\BadgeBundle\Provider\ProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 class BadgeController extends ContainerAware
 {	
 	/**
 	 * Create a badge
-	 *
+	 * @Secure(roles="ROLE_ADMIN")
 	 * @return Response
 	 */
 	public function newBadgeAction()
@@ -35,7 +36,7 @@ class BadgeController extends ContainerAware
 	}
 	/**
 	 * Edit a badge
-	 *
+	 * @Secure(roles="ROLE_ADMIN")
 	 * @return Response
 	 */
 	public function editBadgeAction($id, Request $request)
@@ -62,7 +63,7 @@ class BadgeController extends ContainerAware
 	}
 	/**
 	 * Deletes a badge
-	 *
+	 * @Secure(roles="ROLE_ADMIN")
 	 * @return Response
 	 */
 	public function deleteAction($badgeId)
@@ -98,7 +99,7 @@ class BadgeController extends ContainerAware
 			->renderResponse('AntBadgeBundle:Badge:shelf.html.twig', array(
             	'badges' => $badges
         		));
-		else throw new NotFoundHttpException(sprintf("No badges: '%s' found in shelf", $badges));
+		else throw new NotFoundHttpException(sprintf("There are not badges: '%s' Not found for to show in shelf", $badges));
 	}
 	
 	/**

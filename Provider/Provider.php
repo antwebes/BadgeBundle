@@ -2,6 +2,8 @@
 
 namespace ant\BadgeBundle\Provider;
 
+use ant\BadgeBundle\Model\ParticipantInterface;
+
 use ant\BadgeBundle\Composer\ComposerInterface;
 
 use ant\BadgeBundle\Security\ParticipantProviderInterface;
@@ -110,12 +112,21 @@ class Provider implements ProviderInterface
 		return $this->badgeManager->findBadgesByGroup($group);
 	}
 	/**
-	 * Gets ranks of a participant acquires or no
+	 * Gets ranks of a participant acquires or no of user online
 	 * @return array RankInterface
 	 */
-	public function RanksOfParticipant($acquired)
+	public function RanksOfParticipantOnline($acquired)
 	{		
 		$participant = $this->participantProvider->getAuthenticatedParticipant(); // obtain the user logueado
+		if ($acquired == 'true') return $this->rankManager->findRanksOfParticipantAcquired($participant);
+		else return $this->rankManager->findRanksOfParticipant($participant);
+	}
+	/**
+	 * Gets ranks of a participant acquires or no 
+	 * @return array RankInterface
+	 */
+	public function RanksOfParticipant($acquired, ParticipantInterface $participant)
+	{
 		if ($acquired == 'true') return $this->rankManager->findRanksOfParticipantAcquired($participant);
 		else return $this->rankManager->findRanksOfParticipant($participant);
 	}

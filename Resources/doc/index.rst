@@ -155,5 +155,6 @@ In your controller, you can create a badge event.
 
 Advanced Functions
 ===========
+- For Advanced_Functions_
 
-.. _Advanced functions ( listeners.. ): advanced_functions.rst
+.. _Advanced_Functions: advanced_functions.rst
