@@ -24,7 +24,7 @@ interface ProviderInterface
 	 */
 	public function getShelf();
 	
-	public function RanksOfParticipantOnline($acquired);
+	public function RanksOfParticipantOnline();
 	
 	public function RanksOfParticipant($acquired, ParticipantInterface $participant);
 }

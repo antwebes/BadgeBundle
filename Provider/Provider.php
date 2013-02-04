@@ -76,6 +76,7 @@ class Provider implements ProviderInterface
 	public function getRank($rankId){
 	
 		$rank = $this->rankManager->findRankById($rankId);
+		
 		return $rank;
 	}
 	/**
