@@ -43,5 +43,5 @@ ant_rank_shelf:
     pattern: /rank/shelf/{acquired}
     defaults: { _controller: AntBadgeBundle:Rank:shelf }
 ant_rank_view:
-    pattern: /rank/{rankId}
+    pattern: /rank/view/{rankId}
     defaults: { _controller: AntBadgeBundle:Rank:rank }
