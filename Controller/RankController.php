@@ -31,7 +31,7 @@ class RankController extends ContainerAware
 	 *
 	 * @return Response
 	 */
-	public function shelfAction($acquired)
+	public function myShelfAction($acquired)
 	{
 		$ranks = $this->getProvider()->RanksOfParticipantOnline($acquired);
 		if ($ranks) return $this->container->get('templating')

@@ -36,6 +36,12 @@ ant_group_shelf:
     pattern: /group/shelf
     defaults: { _controller: AntBadgeBundle:Group:shelf }
     #Rank
+ant_rank_my_shelf:
+    pattern: /rank/shelf/{acquired}
+    defaults: { _controller: AntBadgeBundle:Rank:myShelf }
 ant_rank_shelf:
     pattern: /rank/shelf/{acquired}
     defaults: { _controller: AntBadgeBundle:Rank:shelf }
+ant_rank_view:
+    pattern: /rank/{rankId}
+    defaults: { _controller: AntBadgeBundle:Rank:rank }
