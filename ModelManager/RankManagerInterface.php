@@ -22,6 +22,8 @@ interface RankManagerInterface
 	//public function createBadgeParticipant();
 	public function createRank();
 	
+	public function findRankById($id);
+	
 	public function findRankOfBadge(BadgeInterface $badge, ParticipantInterface $participant);
 	
 	public function findRanksOfParticipantAcquired(ParticipantInterface $participant);

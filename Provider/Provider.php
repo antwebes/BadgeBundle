@@ -69,6 +69,16 @@ class Provider implements ProviderInterface
 		return $badge;
 	}
 	/**
+	 * Gets a rank by its ID
+	 *
+	 * @return RankInterface
+	 */
+	public function getRank($rankId){
+	
+		$rank = $this->rankManager->findRankById($rankId);
+		return $rank;
+	}
+	/**
 	 * Gets a group by its ID
 	 *
 	 * @return GroupInterface
@@ -112,14 +122,13 @@ class Provider implements ProviderInterface
 		return $this->badgeManager->findBadgesByGroup($group);
 	}
 	/**
-	 * Gets ranks of a participant acquires or no of user online
+	 * Gets all ranks of a participant of user online
 	 * @return array RankInterface
 	 */
-	public function RanksOfParticipantOnline($acquired)
+	public function RanksOfParticipantOnline()
 	{		
 		$participant = $this->participantProvider->getAuthenticatedParticipant(); // obtain the user logueado
-		if ($acquired == 'true') return $this->rankManager->findRanksOfParticipantAcquired($participant);
-		else return $this->rankManager->findRanksOfParticipant($participant);
+		return $this->rankManager->findRanksOfParticipant($participant);
 	}
 	/**
 	 * Gets ranks of a participant acquires or no 

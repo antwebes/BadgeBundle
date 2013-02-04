@@ -31,11 +31,11 @@ class RankController extends ContainerAware
 	 *
 	 * @return Response
 	 */
-	public function myShelfAction($acquired)
+	public function myShelfAction()
 	{
-		$ranks = $this->getProvider()->RanksOfParticipantOnline($acquired);
+		$ranks = $this->getProvider()->RanksOfParticipantOnline();
 		if ($ranks) return $this->container->get('templating')
-		->renderResponse('AntBadgeBundle:Rank:shelf.html.twig', array(
+		->renderResponse('AntBadgeBundle:Rank:myShelf.html.twig', array(
 				'ranks' => $ranks
 		));
 		else throw new NotFoundHttpException(sprintf("No ranks: '%s' found in shelf", $ranks));

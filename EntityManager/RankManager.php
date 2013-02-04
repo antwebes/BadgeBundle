@@ -55,7 +55,15 @@ class RankManager extends BaseRankManager
         $this->class = $em->getClassMetadata($class)->name;
         
     }
-
+    /**
+     * Finds a rank by its ID
+     *
+     * @return RankInterface or null
+     */
+    public function findRankById($id)
+    {
+    	return $this->repository->find($id);
+    }
     /**
 	* Creamos todas las funciones que queramos como el FOsMessageBundle
 	*/

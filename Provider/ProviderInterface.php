@@ -16,7 +16,7 @@ interface ProviderInterface
 	 * @return badge
 	 */
 	public function getBadge($badgeId);
-	
+	public function getRank($rankId);
 	/**
 	 * Gets shelf ( all badges available)
 	 *
