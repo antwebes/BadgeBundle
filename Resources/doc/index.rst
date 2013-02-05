@@ -118,17 +118,18 @@ Basic Usage
 
 First we must clarify some concepts.
 
-BADGE: A badge that has requirements for the user to get it. For example, Comment Gold ( write 100 comments), comment platinum (write 50 comments) ...
-GROUP: Group of badges with same requirements. For example, Group Comment, in this group will be all the badges of comments
-RANK: Rank of each user, i.e:
+- BADGE: A badge that has requirements for the user to get it. For example, Comment Gold ( write 100 comments), comment platinum (write 50 comments) ...
+- GROUP: Group of badges with same requirements. For example, Group Comment, in this group will be all the badges of comments
+- RANK: Rank of each user, i.e:
 
-Participant: James
-Badge: Comment Gold
-Count: Count of the user to participate for this badge
-wontAt: null or datetime
-acquired: bool ( true or false)
+	Participant: James
+	Badge: Comment Gold
+	Count: Count of the user to participate for this badge
+	wontAt: null or datetime
+	acquired: bool ( true or false)
 
 A user will have a rank for each badge which is participating.
+
 If the user count is greater than the count necessary for win the badge, the field Acquired = true wontAt = "date when the user got the badge" 
 
 Create a group
@@ -137,9 +138,10 @@ Create a group
 In the path: ant_group_new
 
 You can create a group, with field name, class and type.
-Name: Name of group.
-Class: Entity with it will work. "acme\AcmeBundle\Entity\Acme"
-Type: for example, "count" "date" ... requirement for win the badges this group
+
+- Name: Name of group.
+- Class: Entity with it will work. "acme\AcmeBundle\Entity\Acme"
+- Type: for example, "count" "date" ... requirement for win the badges this group
 
 Create a badge
 --------------
