@@ -12,7 +12,9 @@ A badge is an object that the user gets when it meets minimum requirements.
 The persistence is storage agnostic. Any backend may be implemented: Doctrine, Propel, etc.
 Presently, only the OMR implementation is complete.
 
-This bundle is currently under development, will be at 100% soon.
+The Bundle works correctly. 
+
+Any question, You can write a issue.
 
 ---
 

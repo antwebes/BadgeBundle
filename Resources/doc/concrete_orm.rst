@@ -77,35 +77,35 @@ Group class
 -------------
 
 ::
- 
-// src/Acme/BadgeBundle/Entity/Badge.php
-
-namespace Acme/BadgeBundle\Entity;
-
-use Doctrine\ORM\Mapping as ORM;
-
-use ant\BadgeBundle\Entity\Group as BaseGroup;
-
-/**
- * @ORM\Entity
- * @ORM\Table(name="badge_group") // You don't use group for name table
- */
-class Group extends BaseGroup
-{
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
-        
-    /**
-     * @ORM\OneToMany(targetEntity="Badge", mappedBy="badgeGroup")
-     */
-    protected $badges;
-
-	public function getBadges() {
-		return $this->badges;
+	 
+	// src/Acme/BadgeBundle/Entity/Badge.php
+	
+	namespace Acme/BadgeBundle\Entity;
+	
+	use Doctrine\ORM\Mapping as ORM;
+	
+	use ant\BadgeBundle\Entity\Group as BaseGroup;
+	
+	/**
+	 * @ORM\Entity
+	 * @ORM\Table(name="badge_group") // You don't use group for name table
+	 */
+	class Group extends BaseGroup
+	{
+	    /**
+	     * @ORM\Id
+	     * @ORM\Column(type="integer")
+	     * @ORM\GeneratedValue(strategy="AUTO")
+	     */
+	    protected $id;
+	        
+	    /**
+	     * @ORM\OneToMany(targetEntity="Badge", mappedBy="badgeGroup")
+	     */
+	    protected $badges;
+	
+		public function getBadges() {
+			return $this->badges;
+		}
+	
 	}
-
-}
