@@ -101,7 +101,17 @@ class Composer implements ComposerInterface
      */
     public function createRank(ParticipantInterface $participant, BadgeInterface $badge, $count=1)
     {
-    	$rank = $this->newRank()
+    	$countBadge = $badge->getCount();
+    	if ($countBadge == $count )
+	    	$rank = $this->newRank()
+		    	->setParticipant($participant)
+		    	->setBadge($badge)
+		    	->setcount($count)
+		    	->setAcquired(true)
+		    	->setWonAt(new \DateTime('now'))
+		    	->getRank();
+    	else 
+    		$rank = $this->newRank()
 	    	->setParticipant($participant)
 	    	->setBadge($badge)
 	    	->setcount($count)
