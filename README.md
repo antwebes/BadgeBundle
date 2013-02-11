@@ -1,5 +1,6 @@
 Documentation: https://github.com/antwebes/BadgeBundle/blob/master/Resources/doc/index.rst
 
+Documentation in spanish: https://github.com/antwebes/BadgeBundle/blob/master/Resources/doc/index-es.rst
 
 ---
 
