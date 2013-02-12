@@ -71,11 +71,11 @@ class NewRankBuilder extends AbstractBadgeBuilder
 	}
 	
 	/**
-	 * @see FOS\MessageBundle\Model\ThreadInterface::setWonAt()
+	 * @see ant\BadgeBundle\Model\RankInterface::setWonAt()
 	 */
-	public function setWonAt(\DateTime $wonAt)
+	public function setWonAt(\DateTime $WonAt)
 	{
-		$this->rank->setWonAt($wonAt);
+		$this->rank->setWonAt($WonAt);
 		return $this;
 	}
 }

@@ -95,7 +95,7 @@ abstract class Rank implements RankInterface {
 		$this->badge = $badge;
 	}
 	/**
-	 * @see FOS\MessageBundle\Model\ThreadInterface::getWonAt()
+	 * @see ant\BadgeBundle\Model\RankInterface::getWonAt()
 	 */
 	public function getWonAt()
 	{
@@ -103,7 +103,7 @@ abstract class Rank implements RankInterface {
 	}
 	
 	/**
-	 * @see FOS\MessageBundle\Model\ThreadInterface::setWonAt()
+	 * @see ant\BadgeBundle\Model\RankInterface::setWonAt()
 	 */
 	public function setWonAt(\DateTime $wonAt)
 	{

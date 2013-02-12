@@ -64,13 +64,14 @@ Rank class
 	     */
 	    protected $participant;
 	    /**
-		 * @ORM\ManyToOne(targetEntity="sdfs\sdfsBundle\Entity\Badge")
+		 * @ORM\ManyToOne(targetEntity="Badge")
 		 */
 		protected $badge;
+		
 	    public function setParticipant(ParticipantInterface $participant) {
-    	$this->participant = $participant;
-    	return $this;
-    }
+    		$this->participant = $participant;
+    		return $this;
+    	}
 	}
 	
 Group class

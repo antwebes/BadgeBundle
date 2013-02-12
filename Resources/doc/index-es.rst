@@ -125,7 +125,7 @@ Antes de nada vamos a clarificar algunos conceptos.
 	- Participant: James
 	- Badge: Comentario Oro
 	- Count: Contador del usuario para este badge, es decir cuantos comentarios lleva escritos.
-	- wontAt: null or datetime
+	- WontAt: null or datetime
 	- acquired: bool ( true or false)
 
 	Un usuario tendrá un rank por cada badge en el que esté participando.

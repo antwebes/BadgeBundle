@@ -125,7 +125,7 @@ First we must clarify some concepts.
 	- Participant: James
 	- Badge: Comment Gold
 	- Count: Count of the user to participate for this badge
-	- wontAt: null or datetime
+	- WontAt: null or datetime
 	- acquired: bool ( true or false)
 
 	A user will have a rank for each badge which is participating.
