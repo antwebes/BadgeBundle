@@ -125,12 +125,12 @@ First we must clarify some concepts.
 	- Participant: James
 	- Badge: Comment Gold
 	- Count: Count of the user to participate for this badge
-	- WontAt: null or datetime
+	- wonAt: null or datetime
 	- acquired: bool ( true or false)
 
 	A user will have a rank for each badge which is participating.
 
-	If the user count is greater than the count necessary for win the badge, the field Acquired = true wontAt = "date when the user got the badge" 
+	If the user count is greater than the count necessary for win the badge, the field Acquired = true wonAt = "date when the user got the badge" 
 
 Create a group
 --------------

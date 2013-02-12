@@ -125,12 +125,12 @@ Antes de nada vamos a clarificar algunos conceptos.
 	- Participant: James
 	- Badge: Comentario Oro
 	- Count: Contador del usuario para este badge, es decir cuantos comentarios lleva escritos.
-	- WontAt: null or datetime
+	- wonAt: null or datetime
 	- acquired: bool ( true or false)
 
 	Un usuario tendrá un rank por cada badge en el que esté participando.
 
-	Si el count del usuario es mayor que el count necesario del badge, entonces ese rank, se marcará como ganado y se incluirá la fecha en que ha sido logrado. Acquired = true wontAt = "date" 
+	Si el count del usuario es mayor que el count necesario del badge, entonces ese rank, se marcará como ganado y se incluirá la fecha en que ha sido logrado. Acquired = true wonAt = "date" 
 
 Crear un grupo
 --------------
