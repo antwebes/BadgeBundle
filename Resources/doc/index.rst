@@ -50,7 +50,7 @@ Enable the bundle in the kernel:
 	{
 	    $bundles = array(
 	        // ...
-	        new ant\BadgeBundle\AntBadgeBundle()
+	        new Ant\BadgeBundle\AntBadgeBundle()
 	    );
 	}
 	
@@ -90,7 +90,7 @@ For exemple, if your user class is ``Acme\UserBundle\Document\User``::
 
     // src/Acme/UserBundle/Document/User.php
 
-    use ant\BadgeBundle\Model\ParticipantInterface as ParticipantBadge;
+    use Ant\BadgeBundle\Model\ParticipantInterface as ParticipantBadge;
 
     /**
      * @ORM\Entity
@@ -177,8 +177,8 @@ Create a event
 --------------
 In your controller, you can create a badge event::
 
-	use ant\BadgeBundle\Event\BadgeEvent;
-	use ant\BadgeBundle\Event\AntBadgeEvents;
+	use Ant\BadgeBundle\Event\BadgeEvent;
+	use Ant\BadgeBundle\Event\AntBadgeEvents;
 	
 	class AcmeController extends Controller
 	{

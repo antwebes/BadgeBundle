@@ -1,8 +1,8 @@
 <?php
 
-namespace ant\BadgeBundle\FormModel;
+namespace Ant\BadgeBundle\FormModel;
 
-use ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
 
 abstract class AbstractBadge
 {

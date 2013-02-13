@@ -1,13 +1,13 @@
 <?php
 
-namespace ant\BadgeBundle\Controller;
+namespace Ant\BadgeBundle\Controller;
 
-use ant\BadgeBundle\Model\BadgeInterface;
-use ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use ant\BadgeBundle\Provider\ProviderInterface;
+use Ant\BadgeBundle\Provider\ProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class RankController extends ContainerAware

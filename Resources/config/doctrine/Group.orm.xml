@@ -14,7 +14,7 @@ with this source code in the file LICENSE.
                         xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
 http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <mapped-superclass name="ant\BadgeBundle\Entity\Group" >
+    <mapped-superclass name="Ant\BadgeBundle\Entity\Group" >
 
         <field name="name" column="name" type="text" />
         

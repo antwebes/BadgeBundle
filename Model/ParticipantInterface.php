@@ -1,6 +1,6 @@
 <?php
 
-namespace ant\BadgeBundle\Model;
+namespace Ant\BadgeBundle\Model;
 
 /**
  * User winner of a badge

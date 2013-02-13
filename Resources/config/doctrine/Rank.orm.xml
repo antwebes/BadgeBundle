@@ -14,7 +14,7 @@ with this source code in the file LICENSE.
                         xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
 http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <mapped-superclass name="ant\BadgeBundle\Entity\Rank" table="ant_badge_rank">
+    <mapped-superclass name="Ant\BadgeBundle\Entity\Rank" table="ant_badge_rank">
 
         <field name="count" column="count" type="text" />
         <field name="acquired" column="acquired" type="boolean" />

@@ -7,9 +7,9 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace ant\BadgeBundle\Model;
+namespace Ant\BadgeBundle\Model;
 
-use ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
 
 abstract class Rank implements RankInterface {
 	
@@ -58,14 +58,14 @@ abstract class Rank implements RankInterface {
 	}
 	
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::setParticipant()
+	 * @see Ant\BadgeBundle\Model\RankInterface::setParticipant()
 	 */
 	public function setParticipant(ParticipantInterface $participant)
 	{
 		$this->participant = $participant;
 	}
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::getAcquired()
+	 * @see Ant\BadgeBundle\Model\RankInterface::getAcquired()
 	 */
 	public function getAcquired()
 	{
@@ -73,14 +73,14 @@ abstract class Rank implements RankInterface {
 	}
 	
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::setAcquired()
+	 * @see Ant\BadgeBundle\Model\RankInterface::setAcquired()
 	 */
 	public function setAcquired($acquired)
 	{
 		$this->acquired = $acquired;
 	}
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::getBadge()
+	 * @see Ant\BadgeBundle\Model\RankInterface::getBadge()
 	 */
 	public function getBadge()
 	{
@@ -88,14 +88,14 @@ abstract class Rank implements RankInterface {
 	}
 	
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::setBadge()
+	 * @see Ant\BadgeBundle\Model\RankInterface::setBadge()
 	 */
 	public function setBadge(BadgeInterface $badge)
 	{
 		$this->badge = $badge;
 	}
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::getWonAt()
+	 * @see Ant\BadgeBundle\Model\RankInterface::getWonAt()
 	 */
 	public function getWonAt()
 	{
@@ -103,7 +103,7 @@ abstract class Rank implements RankInterface {
 	}
 	
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::setWonAt()
+	 * @see Ant\BadgeBundle\Model\RankInterface::setWonAt()
 	 */
 	public function setWonAt(\DateTime $wonAt)
 	{

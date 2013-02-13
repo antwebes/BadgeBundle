@@ -1,6 +1,6 @@
 <?php
 
-namespace ant\BadgeBundle\FormModel;
+namespace Ant\BadgeBundle\FormModel;
 
 
 

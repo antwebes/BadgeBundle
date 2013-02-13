@@ -1,9 +1,9 @@
 <?php
 
-namespace ant\BadgeBundle\BadgeBuilder;
+namespace Ant\BadgeBundle\BadgeBuilder;
 
-use ant\BadgeBundle\Model\BadgeInterface;
-use ant\BadgeBundle\Model\RankInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\Model\RankInterface;
 
 /**
  * Fluent interface badge builder

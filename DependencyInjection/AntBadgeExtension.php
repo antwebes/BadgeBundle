@@ -1,6 +1,6 @@
 <?php
 
-namespace ant\BadgeBundle\DependencyInjection;
+namespace Ant\BadgeBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

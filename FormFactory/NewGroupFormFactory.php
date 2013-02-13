@@ -1,6 +1,6 @@
 <?php
 
-namespace ant\BadgeBundle\FormFactory;
+namespace Ant\BadgeBundle\FormFactory;
 
 /**
 * Instanciates badge forms

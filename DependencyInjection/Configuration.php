@@ -1,6 +1,6 @@
 <?php
 
-namespace ant\BadgeBundle\DependencyInjection;
+namespace Ant\BadgeBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -32,14 +32,14 @@ class Configuration implements ConfigurationInterface
 	        		->addDefaultsIfNotSet()
 	        		->children()
 	        			->scalarNode('name')->defaultValue('badge')->cannotBeEmpty()->end()
-		        		->scalarNode('model')->defaultValue('ant\BadgeBundle\FormModel\NewBadge')->end()
+		        		->scalarNode('model')->defaultValue('Ant\BadgeBundle\FormModel\NewBadge')->end()
 	        		->end()
         		->end()
         		->arrayNode('new_group_form')
 	        		->addDefaultsIfNotSet()
 	        		->children()
 		        		->scalarNode('name')->defaultValue('group')->cannotBeEmpty()->end()
-		        		->scalarNode('model')->defaultValue('ant\BadgeBundle\FormModel\NewGroup')->end()
+		        		->scalarNode('model')->defaultValue('Ant\BadgeBundle\FormModel\NewGroup')->end()
 	        		->end()
         		->end()
         		;

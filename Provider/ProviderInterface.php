@@ -1,12 +1,12 @@
 <?php
 
-namespace ant\BadgeBundle\Provider;
+namespace Ant\BadgeBundle\Provider;
 
 /**
  * 
  * @author Pablo <pablo@antweb.es>
  */
-use ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
 
 interface ProviderInterface
 {

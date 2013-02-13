@@ -9,9 +9,9 @@
 * with this source code in the file LICENSE.
 */
 
-namespace ant\BadgeBundle\Entity;
+namespace Ant\BadgeBundle\Entity;
 
-use ant\BadgeBundle\Model\Rank as AbstractRank;
+use Ant\BadgeBundle\Model\Rank as AbstractRank;
 
 /**
 * Default ORM implementation of RankInterface.

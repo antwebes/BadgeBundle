@@ -1,10 +1,10 @@
 <?php
 
-namespace ant\BadgeBundle\BadgeBuilder;
+namespace Ant\BadgeBundle\BadgeBuilder;
 
-use ant\BadgeBundle\Model\RankInterface;
-use ant\BadgeBundle\Model\ParticipantInterface;
-use ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\Model\RankInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
 /**
  * Fluent interface badge builder for new badge
  *
@@ -44,7 +44,7 @@ class NewRankBuilder extends AbstractBadgeBuilder
 	
 	
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::setParticipant()
+	 * @see Ant\BadgeBundle\Model\RankInterface::setParticipant()
 	 */
 	public function setParticipant(ParticipantInterface $participant)
 	{
@@ -53,7 +53,7 @@ class NewRankBuilder extends AbstractBadgeBuilder
 	}
 	
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::setAcquired()
+	 * @see Ant\BadgeBundle\Model\RankInterface::setAcquired()
 	 */
 	public function setAcquired($acquired)
 	{
@@ -62,7 +62,7 @@ class NewRankBuilder extends AbstractBadgeBuilder
 	}
 	
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::setBadge()
+	 * @see Ant\BadgeBundle\Model\RankInterface::setBadge()
 	 */
 	public function setBadge(BadgeInterface $badge)
 	{
@@ -71,7 +71,7 @@ class NewRankBuilder extends AbstractBadgeBuilder
 	}
 	
 	/**
-	 * @see ant\BadgeBundle\Model\RankInterface::setWonAt()
+	 * @see Ant\BadgeBundle\Model\RankInterface::setWonAt()
 	 */
 	public function setWonAt(\DateTime $wonAt)
 	{

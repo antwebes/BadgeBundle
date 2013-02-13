@@ -8,11 +8,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace ant\BadgeBundle\EntityManager;
+namespace Ant\BadgeBundle\EntityManager;
 
 
-use ant\BadgeBundle\ModelManager\GroupManager as BaseGroupManager;
-use ant\BadgeBundle\Model\GroupInterface;
+use Ant\BadgeBundle\ModelManager\GroupManager as BaseGroupManager;
+use Ant\BadgeBundle\Model\GroupInterface;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Query\Builder;
 

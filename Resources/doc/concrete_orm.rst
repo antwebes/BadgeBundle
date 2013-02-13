@@ -14,7 +14,7 @@ Badge class
 	
 	use Doctrine\ORM\Mapping as ORM;
 	
-	use ant\BadgeBundle\Entity\Badge as BaseBadge;
+	use Ant\BadgeBundle\Entity\Badge as BaseBadge;
 	
 	/**
 	 * @ORM\Entity
@@ -46,8 +46,8 @@ Rank class
 	
 	use Doctrine\ORM\Mapping as ORM;
 	
-	use ant\BadgeBundle\Entity\Rank as BaseRank;
-	use ant\BadgeBundle\Model\ParticipantInterface;
+	use Ant\BadgeBundle\Entity\Rank as BaseRank;
+	use Ant\BadgeBundle\Model\ParticipantInterface;
 	/**
 	 * @ORM\Entity
 	 */
@@ -85,7 +85,7 @@ Group class
 	
 	use Doctrine\ORM\Mapping as ORM;
 	
-	use ant\BadgeBundle\Entity\Group as BaseGroup;
+	use Ant\BadgeBundle\Entity\Group as BaseGroup;
 	
 	/**
 	 * @ORM\Entity

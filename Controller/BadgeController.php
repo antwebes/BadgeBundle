@@ -1,11 +1,11 @@
 <?php
 
-namespace ant\BadgeBundle\Controller;
+namespace Ant\BadgeBundle\Controller;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use ant\BadgeBundle\Provider\ProviderInterface;
+use Ant\BadgeBundle\Provider\ProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 

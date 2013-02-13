@@ -1,14 +1,14 @@
 <?php 
 
-namespace ant\BadgeBundle\EventListener;
+namespace Ant\BadgeBundle\EventListener;
 
-use ant\BadgeBundle\Provider\ProviderInterface;
-use ant\BadgeBundle\ModelManager\GroupManagerInterface;
-use ant\BadgeBundle\ModelManager\BadgeManagerInterface;
-use ant\BadgeBundle\Event\BadgeEvent;
+use Ant\BadgeBundle\Provider\ProviderInterface;
+use Ant\BadgeBundle\ModelManager\GroupManagerInterface;
+use Ant\BadgeBundle\ModelManager\BadgeManagerInterface;
+use Ant\BadgeBundle\Event\BadgeEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
-use ant\BadgeBundle\Event\AntBadgeEvents;
+use Ant\BadgeBundle\Event\AntBadgeEvents;
 
 
 class PublishListener implements EventSubscriberInterface

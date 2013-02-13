@@ -1,10 +1,10 @@
 <?php
 
-namespace ant\BadgeBundle\Security;
+namespace Ant\BadgeBundle\Security;
 
 use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
 
 /**
  * Provides the authenticated participant

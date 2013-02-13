@@ -1,12 +1,12 @@
 <?php
 
-namespace ant\BadgeBundle\Composer;
+namespace Ant\BadgeBundle\Composer;
 
-use ant\BadgeBundle\Model\RankInterface;
+use Ant\BadgeBundle\Model\RankInterface;
 
-use ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
 
-use ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
 
 /**
  * Factory for badge builders

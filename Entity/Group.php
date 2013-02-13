@@ -9,9 +9,9 @@
 * with this source code in the file LICENSE.
 */
 
-namespace ant\BadgeBundle\Entity;
+namespace Ant\BadgeBundle\Entity;
 
-use ant\BadgeBundle\Model\Group as AbstractGroup;
+use Ant\BadgeBundle\Model\Group as AbstractGroup;
 
 /**
 * Default ORM implementation of BadgetInterface.

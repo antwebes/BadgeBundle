@@ -1,10 +1,10 @@
 <?php
 
-namespace ant\BadgeBundle\FormFactory;
+namespace Ant\BadgeBundle\FormFactory;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormFactoryInterface;
-use ant\BadgeBundle\FormModel\AbstractBadge;
+use Ant\BadgeBundle\FormModel\AbstractBadge;
 
 /**
  * Instanciates badge forms
@@ -47,7 +47,7 @@ abstract class AbstractBadgeFormFactory
         $this->formType = $formType;
         $this->formName = $formName;
         $this->badgeClass = $badgeClass;
-       // $this->badgeClass = 'ant\BadgeBundle\FormModel\NewBadge';
+       // $this->badgeClass = 'Ant\BadgeBundle\FormModel\NewBadge';
     }
 
     /**

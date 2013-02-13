@@ -8,12 +8,12 @@
  * with this source code in the file LICENSE.
  */
 
-namespace ant\BadgeBundle\EntityManager;
+namespace Ant\BadgeBundle\EntityManager;
 
-use ant\BadgeBundle\ModelManager\BadgeManager as BaseBadgeManager;
+use Ant\BadgeBundle\ModelManager\BadgeManager as BaseBadgeManager;
 
 use Doctrine\ORM\EntityManager;
-use ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
 use Doctrine\ORM\Query\Builder;
 
 /**

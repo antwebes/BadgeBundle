@@ -13,48 +13,48 @@
 
     <services>
 
-		 <service id="ant_badge.new_badge_form.type" class="ant\BadgeBundle\FormType\NewBadgeFormType" public="true" >
+		 <service id="ant_badge.new_badge_form.type" class="Ant\BadgeBundle\FormType\NewBadgeFormType" public="true" >
 		 	<argument>%ant_badge.group_class%</argument>
 		 </service>
-		 <service id="ant_badge.new_group_form.type" class="ant\BadgeBundle\FormType\NewGroupFormType" public="true" />
+		 <service id="ant_badge.new_group_form.type" class="Ant\BadgeBundle\FormType\NewGroupFormType" public="true" />
 		 
-		 <service id="ant_badge.badge_form.type" class="ant\BadgeBundle\FormType\BadgeFormType" public="true" >
+		 <service id="ant_badge.badge_form.type" class="Ant\BadgeBundle\FormType\BadgeFormType" public="true" >
 		 	<argument>%ant_badge.badge_class%</argument>
 		 </service>
-		 <service id="ant_badge.group_form.type" class="ant\BadgeBundle\FormType\GroupFormType" public="true" >
-		 	<argument>%ant_badge.group_class%</argument>
+		 <service id="ant_badge.group_form.type" class="Ant\BadgeBundle\FormType\GroupFormType" public="true" >
+		 	<argument>%Ant_badge.group_class%</argument>
 		 </service>
 		 
-        <service id="ant_badge.new_badge_form.factory" class="ant\BadgeBundle\FormFactory\NewBadgeFormFactory" public="true">
+        <service id="ant_badge.new_badge_form.factory" class="Ant\BadgeBundle\FormFactory\NewBadgeFormFactory" public="true">
             <argument type="service" id="form.factory" />
             <argument type="service" id="ant_badge.new_badge_form.type" />
             <argument>%ant_badge.new_badge_form.name%</argument>
             <argument>%ant_badge.new_badge_form.model%</argument>          
         </service>
-        <service id="ant_badge.new_group_form.factory" class="ant\BadgeBundle\FormFactory\NewGroupFormFactory" public="true">
+        <service id="ant_badge.new_group_form.factory" class="Ant\BadgeBundle\FormFactory\NewGroupFormFactory" public="true">
             <argument type="service" id="form.factory" />
             <argument type="service" id="ant_badge.new_group_form.type" />
             <argument>%ant_badge.new_group_form.name%</argument>
             <argument>%ant_badge.new_group_form.model%</argument>          
         </service>
-        <service id="ant_badge.badge_form.factory" class="ant\BadgeBundle\FormFactory\BadgeFormFactory" public="true">
+        <service id="ant_badge.badge_form.factory" class="Ant\BadgeBundle\FormFactory\BadgeFormFactory" public="true">
             <argument type="service" id="form.factory" />
          	<argument type="service" id="ant_badge.badge_form.type" />
             <argument>%ant_badge.new_badge_form.name%</argument>
             <argument>%ant_badge.new_badge_form.model%</argument>          
         </service>
-        <service id="ant_badge.group_form.factory" class="ant\BadgeBundle\FormFactory\GroupFormFactory" public="true">
+        <service id="ant_badge.group_form.factory" class="Ant\BadgeBundle\FormFactory\GroupFormFactory" public="true">
             <argument type="service" id="form.factory" />
          	<argument type="service" id="ant_badge.group_form.type" />
             <argument>%ant_badge.new_group_form.name%</argument>
             <argument>%ant_badge.new_group_form.model%</argument>          
         </service>
         
-        <service id="ant_badge.new_badge_form.handler" class="ant\BadgeBundle\FormHandler\NewBadgeFormHandler" scope="request" public="true">
+        <service id="ant_badge.new_badge_form.handler" class="Ant\BadgeBundle\FormHandler\NewBadgeFormHandler" scope="request" public="true">
             <argument type="service" id="request" />
             <argument type="service" id="ant_badge.composer" />
         </service>
-        <service id="ant_badge.new_group_form.handler" class="ant\BadgeBundle\FormHandler\NewGroupFormHandler" scope="request" public="true">
+        <service id="ant_badge.new_group_form.handler" class="Ant\BadgeBundle\FormHandler\NewGroupFormHandler" scope="request" public="true">
             <argument type="service" id="request" />
             <argument type="service" id="ant_badge.composer" />
         </service>

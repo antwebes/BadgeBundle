@@ -1,6 +1,6 @@
 <?php
 
-namespace ant\BadgeBundle\FormType;
+namespace Ant\BadgeBundle\FormType;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

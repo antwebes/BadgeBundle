@@ -11,11 +11,11 @@ We can create a listener to the event win a badge.
 	
 	namespace Acme\BadgeBundleBundle\Listener;
 	
-	use ant\SocialBundle\Model\NotificacionInterface;
-	use ant\BadgeBundle\Event\RankEvent;
+	use Ant\SocialBundle\Model\NotificacionInterface;
+	use Ant\BadgeBundle\Event\RankEvent;
 	use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 	use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
-	use ant\BadgeBundle\Event\AntBadgeEvents;
+	use Ant\BadgeBundle\Event\AntBadgeEvents;
 	
 	
 	class Listener implements EventSubscriberInterface

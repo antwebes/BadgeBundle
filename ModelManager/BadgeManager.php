@@ -8,9 +8,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace ant\BadgeBundle\ModelManager;
+namespace Ant\BadgeBundle\ModelManager;
 
-use ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
 
 abstract class BadgeManager implements BadgeManagerInterface {
 

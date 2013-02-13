@@ -1,6 +1,6 @@
 <?php
 
-namespace ant\BadgeBundle\Tests\Controller;
+namespace Ant\BadgeBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

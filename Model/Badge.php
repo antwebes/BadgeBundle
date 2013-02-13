@@ -8,7 +8,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace ant\BadgeBundle\Model;
+namespace Ant\BadgeBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

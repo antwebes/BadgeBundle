@@ -1,8 +1,8 @@
 <?php
 
-namespace ant\BadgeBundle\BadgeBuilder;
+namespace Ant\BadgeBundle\BadgeBuilder;
 
-use ant\BadgeBundle\Model\GroupInterface;
+use Ant\BadgeBundle\Model\GroupInterface;
 
 /**
  * Fluent interface badge builder for new badge

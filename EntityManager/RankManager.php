@@ -8,16 +8,16 @@
  * with this source code in the file LICENSE.
  */
 
-namespace ant\BadgeBundle\EntityManager;
+namespace Ant\BadgeBundle\EntityManager;
 
-use ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
 
-use ant\BadgeBundle\ModelManager\RankManager as BaseRankManager;
+use Ant\BadgeBundle\ModelManager\RankManager as BaseRankManager;
 
 use Doctrine\ORM\EntityManager;
-use ant\BadgeBundle\Model\RankInterface;
+use Ant\BadgeBundle\Model\RankInterface;
 use Doctrine\ORM\Query\Builder;
-use ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
 
 /**
 * Default ORM RankManager.

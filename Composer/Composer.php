@@ -1,22 +1,22 @@
 <?php
 
-namespace ant\BadgeBundle\Composer;
+namespace Ant\BadgeBundle\Composer;
 
 
-use ant\BadgeBundle\Event\RankEvent;
+use Ant\BadgeBundle\Event\RankEvent;
 
-use ant\BadgeBundle\Model\RankInterface;
-use ant\BadgeBundle\Model\ParticipantInterface;
-use ant\BadgeBundle\Model\BadgeInterface;
-use ant\BadgeBundle\ModelManager\BadgeManagerInterface;
-use ant\BadgeBundle\ModelManager\RankManagerInterface;
-use ant\BadgeBundle\BadgeBuilder\NewBadgeBuilder;
-use ant\BadgeBundle\BadgeBuilder\NewRankBuilder;
-use ant\BadgeBundle\BadgeBuilder\NewGroupBuilder;
-use ant\BadgeBundle\ModelManager\GroupManagerInterface;
+use Ant\BadgeBundle\Model\RankInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\ModelManager\BadgeManagerInterface;
+use Ant\BadgeBundle\ModelManager\RankManagerInterface;
+use Ant\BadgeBundle\BadgeBuilder\NewBadgeBuilder;
+use Ant\BadgeBundle\BadgeBuilder\NewRankBuilder;
+use Ant\BadgeBundle\BadgeBuilder\NewGroupBuilder;
+use Ant\BadgeBundle\ModelManager\GroupManagerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use ant\BadgeBundle\Event\AntBadgeEvents;
+use Ant\BadgeBundle\Event\AntBadgeEvents;
 
 /**
  * Factory for badge builders

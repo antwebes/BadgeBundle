@@ -2,11 +2,11 @@
 
 
 
-namespace ant\BadgeBundle\Event;
+namespace Ant\BadgeBundle\Event;
 
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\EventDispatcher\Event;
-use ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
 use Doctrine\ORM\EntityManager;
 
 class BadgeEvent extends Event

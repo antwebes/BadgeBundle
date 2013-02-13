@@ -1,8 +1,8 @@
 <?php
 
-namespace ant\BadgeBundle\Security;
+namespace Ant\BadgeBundle\Security;
 
-use ant\BadgeBundle\Security\ParticipantProvider;
+use Ant\BadgeBundle\Security\ParticipantProvider;
 
 /**
  * Provides the authenticated participant

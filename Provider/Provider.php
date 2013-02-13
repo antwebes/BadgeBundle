@@ -1,21 +1,21 @@
 <?php
 
-namespace ant\BadgeBundle\Provider;
+namespace Ant\BadgeBundle\Provider;
 
-use ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
 
-use ant\BadgeBundle\Composer\ComposerInterface;
+use Ant\BadgeBundle\Composer\ComposerInterface;
 
-use ant\BadgeBundle\Security\ParticipantProviderInterface;
+use Ant\BadgeBundle\Security\ParticipantProviderInterface;
 
-use ant\BadgeBundle\ModelManager\RankManagerInterface;
+use Ant\BadgeBundle\ModelManager\RankManagerInterface;
 
 use ant\BadgeBundle\Event\BadgeEvent;
-use ant\BadgeBundle\Model\GroupInterface;
-use ant\BadgeBundle\ModelManager\GroupManagerInterface;
+use Ant\BadgeBundle\Model\GroupInterface;
+use Ant\BadgeBundle\ModelManager\GroupManagerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use ant\BadgeBundle\ModelManager\BadgeManagerInterface;
+use Ant\BadgeBundle\ModelManager\BadgeManagerInterface;
 
 /**
  *

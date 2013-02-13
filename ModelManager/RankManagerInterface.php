@@ -8,13 +8,13 @@
  * with this source code in the file LICENSE.
  */
 
-namespace ant\BadgeBundle\ModelManager;
+namespace Ant\BadgeBundle\ModelManager;
 
-use ant\BadgeBundle\Model\RankInterface;
+use Ant\BadgeBundle\Model\RankInterface;
 
-use ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
 
-use ant\BadgeBundle\Model\BadgeInterface;
+use Ant\BadgeBundle\Model\BadgeInterface;
 
 interface RankManagerInterface
 {

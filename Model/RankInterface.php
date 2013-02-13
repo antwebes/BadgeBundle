@@ -7,9 +7,9 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace ant\BadgeBundle\Model;
+namespace Ant\BadgeBundle\Model;
 
-use ant\BadgeBundle\Model\ParticipantInterface;
+use Ant\BadgeBundle\Model\ParticipantInterface;
 
 
 interface RankInterface

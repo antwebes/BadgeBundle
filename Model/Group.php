@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace ant\BadgeBundle\Model;
+namespace Ant\BadgeBundle\Model;
 
 abstract class Group implements GroupInterface {
 	protected $id;

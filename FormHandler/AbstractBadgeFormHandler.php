@@ -1,11 +1,11 @@
 <?php
 
-namespace ant\BadgeBundle\FormHandler;
+namespace Ant\BadgeBundle\FormHandler;
 
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
-use ant\BadgeBundle\Composer\ComposerInterface;
-use ant\BadgeBundle\FormModel\AbstractBadge;
+use Ant\BadgeBundle\Composer\ComposerInterface;
+use Ant\BadgeBundle\FormModel\AbstractBadge;
 use FOS\MessageBundle\Security\ParticipantProviderInterface;
 use FOS\MessageBundle\Sender\SenderInterface;
 

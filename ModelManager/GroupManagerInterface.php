@@ -8,7 +8,7 @@
 * with this source code in the file LICENSE.
 */
 
-namespace ant\BadgeBundle\ModelManager;
+namespace Ant\BadgeBundle\ModelManager;
 
 interface GroupManagerInterface
 {
