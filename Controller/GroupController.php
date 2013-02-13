@@ -95,11 +95,10 @@ class GroupController extends ContainerAware
 	public function shelfAction()
 	{
 		$groups = $this->getProvider()->getShelfGroup();
-		if ($groups) return $this->container->get('templating')
+			return $this->container->get('templating')
 		->renderResponse('AntBadgeBundle:Group:shelf.html.twig', array(
 				'groups' => $groups
 		));
-		else throw new NotFoundHttpException(sprintf("No Groups: you have not created any group, create one from the route: ant_group_new"));
 	}
 	/**
 	 * Gets the provider service

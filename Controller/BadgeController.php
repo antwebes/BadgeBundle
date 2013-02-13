@@ -95,11 +95,11 @@ class BadgeController extends ContainerAware
 	public function shelfAction()
 	{
 		$badges = $this->getProvider()->getShelf();
-		if ($badges) return $this->container->get('templating')
+		return $this->container->get('templating')
 			->renderResponse('AntBadgeBundle:Badge:shelf.html.twig', array(
             	'badges' => $badges
         		));
-		else throw new NotFoundHttpException(sprintf("There are not badges, you have not created any badge"));
+		
 	}
 	
 	/**
