@@ -99,7 +99,7 @@ class BadgeController extends ContainerAware
 			->renderResponse('AntBadgeBundle:Badge:shelf.html.twig', array(
             	'badges' => $badges
         		));
-		else throw new NotFoundHttpException(sprintf("There are not badges: '%s' Not found for to show in shelf", $badges));
+		else throw new NotFoundHttpException(sprintf("There are not badges, you have not created any badge"));
 	}
 	
 	/**
