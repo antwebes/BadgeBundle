@@ -146,6 +146,7 @@ class Provider implements ProviderInterface
 	public function RookieUser(BadgeEvent $event)
 	{
 		$group = $this->getGroupByClass($event->getClass());
+		if ( $group == null ) return true;
 		$badges = $this->getBadgesByGroup($group);
 		$participant = $this->participantProvider->getAuthenticatedParticipant(); // obtain the user logueado
 		

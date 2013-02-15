@@ -103,6 +103,7 @@ class Composer implements ComposerInterface
     {
     	$countBadge = $badge->getCount();
     	if ($countBadge == $count )
+    	{
 	    	$rank = $this->newRank()
 		    	->setParticipant($participant)
 		    	->setBadge($badge)
@@ -110,13 +111,17 @@ class Composer implements ComposerInterface
 		    	->setAcquired(true)
 		    	->setWonAt(new \DateTime('now'))
 		    	->getRank();
-    	else 
+    		$this->rankManager->saveRank($rank);
+    		$this->dispatcher->dispatch(AntBadgeEvents::POST_ACQUIRED, new RankEvent($rank));
+    	}
+    	else {
     		$rank = $this->newRank()
-	    	->setParticipant($participant)
-	    	->setBadge($badge)
-	    	->setcount($count)
-	    	->getRank();
-    	$this->rankManager->saveRank($rank);
+		    	->setParticipant($participant)
+		    	->setBadge($badge)
+		    	->setcount($count)
+		    	->getRank();
+    		$this->rankManager->saveRank($rank);
+    	}
     }
     /**
      * Add one to the counter
