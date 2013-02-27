@@ -16,5 +16,5 @@ interface ParticipantInterface
      *
      * @return string
      */
-    function getId();
+  //  function getId();
 }

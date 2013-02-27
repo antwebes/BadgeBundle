@@ -15,7 +15,7 @@ Presently, only the OMR implementation is complete.
 
 The Bundle works correctly. 
 
-Any question, You can write a issue.
+If you have any suggestion or improvement, feel free to contact me or create an issue.
 
 ---
 
