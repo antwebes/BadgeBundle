@@ -2,9 +2,10 @@
 
 {% block ant_badge_content %}
 
-{{ badge.id }}
-{{ badge.description }}
-group: {{ badge.badgeGroup }}
+<p>Insignia número: {{ badge.id }}</p>
+<p>Esta insignia se ha logrado por: {{ badge.description }}</p>
+
+{# group: {{ badge.badgeGroup }} #}
 
 <img src="{{ badge.image }}"/>
 

@@ -1,21 +1,27 @@
 ant_badge_shelf:
     pattern: /shelf
-    defaults: { _controller: AntBadgeBundle:Badge:shelf }
+    defaults: { _controller: AntBadgeBundle:Badge:shelf, _format: ~ }
+    requirements:
+        _method: GET
 ant_badge_view:
     pattern: /{badgeId}/view
-    defaults: { _controller: AntBadgeBundle:Badge:badge }
+    defaults: { _controller: AntBadgeBundle:Badge:badge, _format: ~ }
+    requirements:
+        _method: GET
 ant_badge_new:
     pattern: /new
     defaults: { _controller: AntBadgeBundle:Badge:newBadge }
 ant_badge_delete:
     pattern: /{badgeId}/delete
-    defaults: { _controller: AntBadgeBundle:Badge:delete }
+    defaults: { _controller: AntBadgeBundle:Badge:delete, _format: ~ }
     requirements:
         _method: DELETE
         id: "\d+"
 ant_badge_edit:
     pattern: /{id}/edit
-    defaults: { _controller: AntBadgeBundle:Badge:editBadge }
+    defaults: { _controller: AntBadgeBundle:Badge:editBadge, _format: ~ }
+   # requirements:
+    #    _method: GET
     #Group
 ant_group_new:
     pattern: /new/group
@@ -34,11 +40,15 @@ ant_group_view:
     defaults: { _controller: AntBadgeBundle:Group:group }
 ant_group_shelf:
     pattern: /group/shelf
-    defaults: { _controller: AntBadgeBundle:Group:shelf }
+    defaults: { _controller: AntBadgeBundle:Group:shelf, _format: ~ }
+    requirements:
+        _method: GET
     #Rank
 ant_rank_my_shelf:
     pattern: /rank/shelf
-    defaults: { _controller: AntBadgeBundle:Rank:myShelf }
+    defaults: { _controller: AntBadgeBundle:Rank:myShelf, _format: ~ }
+    requirements:
+        _method: GET
 ant_rank_shelf:
     pattern: /rank/shelf/{acquired}
     defaults: { _controller: AntBadgeBundle:Rank:shelf }

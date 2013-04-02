@@ -46,7 +46,7 @@ class BadgeController extends ContainerAware
 		
 		$form->setData($badge);
 		
-		if ('POST' === $request->getMethod()) {
+		if ('POST' == $request->getMethod()) {
 			$form->bind($request);
 		
 			if ($form->isValid()) {
@@ -70,7 +70,7 @@ class BadgeController extends ContainerAware
 	{
 		$badge = $this->getProvider()->getBadge($badgeId);
 		$this->container->get('ant_badge.badge_manager')->deleteBadge($badge);
-		
+
 	//	return new RedirectResponse($this->container->get('router')->generate('ant_badge_shelf'));//me redirige a la estanteria de insignias
 	}
 	/**

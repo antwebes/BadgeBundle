@@ -25,6 +25,7 @@ class NewBadgeFormType extends AbstractType
             ->add('description', 'textarea')
             ->add('name', 'text')
             ->add('image', 'text')
+            ->add('image_icon', 'text')
             ->add('count', 'integer')
         	->add('badgeGroup', 'entity', array(
 				'label' =>'Group: ',

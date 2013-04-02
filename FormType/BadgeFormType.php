@@ -24,7 +24,8 @@ class BadgeFormType extends AbstractType
         $builder
             ->add('description', 'textarea')
             ->add('name', 'text')
-            ->add('image', 'text');
+            ->add('image', 'text')
+        	->add('image_icon', 'text');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

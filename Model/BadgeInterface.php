@@ -28,6 +28,10 @@ interface BadgeInterface
 	
 	public function setImage($image);
 	
+	public function getImageIcon();
+	
+	public function setImageIcon($image_icon);
+	
 	public function getBadgeGroup();
 	
 	public function setBadgeGroup(GroupInterface $group);

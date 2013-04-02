@@ -24,6 +24,13 @@ class NewBadge extends AbstractBadge
 	protected $image;
 	
 	/**
+	 * The route of image_icon
+	 *
+	 * @var string
+	 */
+	protected $image_icon;
+	
+	/**
 	 * amount necessary to obtain the badge
 	 *
 	 * @var int
@@ -51,6 +58,23 @@ class NewBadge extends AbstractBadge
 	public function setImage($image)
 	{
 		$this->image = $image;
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getImageIcon()
+	{
+		return $this->image_icon;
+	}
+	
+	/**
+	 * @param  string
+	 * @return null
+	 */
+	public function setImageIcon($image_icon)
+	{
+		$this->image_icon = $image_icon;
 	}
 	
 	

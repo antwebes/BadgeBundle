@@ -56,6 +56,17 @@ class NewBadgeBuilder extends AbstractBadgeBuilder
 		return $this;
 	}
 	
+	/**
+	 * @param BadgeInterface
+	 * @return BadgeBuilder (fluent interface)
+	 */
+	public function setImageIcon($image_icon)
+	{
+		$this->badge->setImageIcon($image_icon);
+	
+		return $this;
+	}
+	
 	public function setcount($count) {
 	
 		$this->badge->setCount($count);

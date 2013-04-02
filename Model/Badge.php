@@ -23,6 +23,7 @@ abstract class Badge implements BadgeInterface {
 	protected $name;
 	protected $description;
 	protected $image;
+	protected $image_icon;
 	/**
 	 * amount necessary to obtain the badge
 	 * @var int
@@ -71,6 +72,14 @@ abstract class Badge implements BadgeInterface {
 
 	public function setImage($image) {
 		$this->image = $image;
+	}
+	
+	public function getImageIcon() {
+		return $this->image_icon;
+	}
+	
+	public function setImageIcon($image_icon) {
+		$this->image_icon = $image_icon;
 	}
 	
 	public function getCount() {
