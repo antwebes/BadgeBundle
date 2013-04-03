@@ -140,7 +140,7 @@ In the path: ant_group_new
 You can create a group, with field name, class and type.
 
 - Name: Nombre del grupo.
-- Class: Entidad con la que trabajará. "acme\AcmeBundle\Entity\Acme"
+- Class: Entidad con la que trabajará :: "acme\AcmeBundle\Entity\Acme"
 - Type: por ejemplo "count", "date" esto es libre por el usuario, para que se puedan gestionar en caso de que las insignias se puedan ganar de diferentes maneras
 
 Crear un badge

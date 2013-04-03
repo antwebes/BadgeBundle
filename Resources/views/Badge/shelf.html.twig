@@ -4,7 +4,7 @@
 
 	{% for badge in badges %}
 	{% if is_granted('ROLE_ADMIN') %}
-		<div class="pin" id="pin{{ badge.id }}">
+		<div id="pin{{ badge.id }}">
 			<a href="{{ path('ant_badge_view', {'badgeId': badge.id } ) }}" ><img src="{{ badge.imageIcon }}"/></a>	
 			ID: {{ badge.id }} | 
 			Name: {{ badge.name }} | 
@@ -14,11 +14,11 @@
 			<a class="btn btn-danger btn-small elim" data-id="{{ badge.id }}">Delete</a>
 			<a class="btn btn-small" href="{{path('ant_badge_edit', {'id': badge.id} )}}">Edit</a>
 	{% else %}
-		<div class="pin" id="pin{{ badge.id }}">
+		<div id="pin{{ badge.id }}">
 			<a href="{{ path('ant_badge_view', {'badgeId': badge.id } ) }}" ><img src="{{ badge.imageIcon }}"/></a>	
-			Número de insignia: {{ badge.id }} | 
-			{{ badge.name }} | 
-			Se consigue por: {{ badge.description }} 
+			{{ badge.id }} | 
+			<b style="color:red;">{{ badge.name }}</b> | 
+			<b>Logro:</b> {{ badge.description }} 
 	{% endif %}
 		
 	</div>

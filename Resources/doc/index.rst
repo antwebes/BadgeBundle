@@ -140,7 +140,7 @@ In the path: ant_group_new
 You can create a group, with field name, class and type.
 
 - Name: Name of group.
-- Class: Entity with it will work. "acme\AcmeBundle\Entity\Acme"
+- Class: Entity with it will work. :: "acme\AcmeBundle\Entity\Acme"
 - Type: for example, "count" "date" ... requirement for win the badges this group
 
 Create a badge
