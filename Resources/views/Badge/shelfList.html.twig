@@ -1,0 +1,10 @@
+{% for badge in badges %}
+			<a href="{{ path('ant_badge_view', {'badgeId': badge.id } ) }}" ><img src="{{ badge.imageIcon }}"/></a>	
+			{{ badge.id }} | 
+			<b style="color:red;">{{ badge.name }}</b> | 
+			<b>Logro:</b> {{ badge.description }}
+			<hr>
+			<a class="btn btn-small" href="{{path('ant_badge_shelf')}}">Ver lista completa</a>
+	{% else %}
+		There are not badges, you have not created any badge
+{% endfor %}

@@ -88,7 +88,7 @@ class BadgeController extends ContainerAware
 		));
 	}
 	/**
-	 * Displays all badges
+	 * Displays all badges in a resource
 	 *
 	 * @return Response
 	 */
@@ -100,6 +100,20 @@ class BadgeController extends ContainerAware
             	'badges' => $badges
         		));
 		
+	}
+	/**
+	 * Displays all badges in a list
+	 *
+	 * @return Response
+	 */
+	public function shelfListAction()
+	{
+		$badges = $this->getProvider()->getShelf();
+		return $this->container->get('templating')
+			->renderResponse('AntBadgeBundle:Badge:shelfList.html.twig', array(
+            	'badges' => $badges
+        		));
+	
 	}
 	
 	/**
