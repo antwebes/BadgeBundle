@@ -37,7 +37,9 @@ abstract class AbstractBadgeFormHandler
             return false;
         }
 
-        $form->bindRequest($this->request);
+        // Use handleRequest() instead of bindRequest or submit() is the preferred way
+        // http://symfony.com/doc/current/book/forms.html#handling-form-submissions
+        $form->handleRequest($this->request);
 
         if ($form->isValid()) {
             return $this->processValidForm($form);
