@@ -2,13 +2,12 @@
 
 {% block ant_badge_content %}
 
-	{% for group in groups %}	
-		
-		{{ group.name }}		
+	{% for group in groups %}
+        <a href="{{ path('ant_group_view', {'groupId': group.id}) }}">{{ group.name }}</a>
 		<ul>
 		{% for badge in group.badges %}
 			<li>{{ badge.description }}
-			{{ badge.name }}</li>			
+			<a href="{{ path('ant_badge_view', {'badgeId': badge.id}) }}">{{ badge.name }}</a></li>
 		{% endfor %}
 		</ul>
 		<hr>
