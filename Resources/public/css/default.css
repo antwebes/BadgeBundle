@@ -1,0 +1,7 @@
+/* http://css.maxdesign.com.au/listamatic/horizontal01.htm */
+.navlist li
+{
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}

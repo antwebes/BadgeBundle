@@ -1,0 +1,22 @@
+{% block navbar %}
+<ul class="navlist">
+    <li>
+        {{ 'Create'|trans }}
+    </li>
+    <li>
+        <a href="{{ path('ant_group_new') }}">{{ 'Group'|trans }}</a>
+    </li>
+    <li>
+        <a href="{{ path('ant_badge_new') }}">{{ 'Badge'|trans }}</a>
+    </li>
+    <li>
+        {{ 'View'|trans }}
+    </li>
+    <li>
+        <a href="{{ path('ant_group_shelf') }}">{{ 'Group'|trans }}</a>
+    </li>
+    <li>
+        <a href="{{ path('ant_badge_shelf') }}">{{ 'Badge'|trans }}</a>
+    </li>
+</ul>
+{% endblock navbar %}
