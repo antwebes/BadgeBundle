@@ -3,12 +3,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}" />
         <title>{% trans from 'AntBadgeBundle' %}badge{% endtrans %}</title>
-        {% stylesheets '@AntBadgeBundle/Resources/public/css/bootstrapc.css' %}
+        {% stylesheets
+            '@AntBadgeBundle/Resources/public/css/bootstrapc.css'
+            '@AntBadgeBundle/Resources/public/css/default.css'
+        %}
             <link rel="stylesheet"  href="{{ asset_url }}" >
           {% endstylesheets %}
     </head>
 
     <body>
+
+        {{ include('AntBadgeBundle:Default:navbar.html.twig') }}
 
         <h1>{% trans from 'AntBadgeBundle' %}badge{% endtrans %}</h1>
 
